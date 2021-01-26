@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Front-end Technologies`,
+    title: `Front-end Technologies | CSS, HTML, Accessibility`,
     author: {
       name: `Harshit Purwar`,
       jobsummary: `(UX Engineer, Design System Aficionado, Jamstack, Accessibility)`,
