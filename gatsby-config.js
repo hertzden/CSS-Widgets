@@ -7,7 +7,7 @@ module.exports = {
       summary: `CSS Widgets is purely focused on CSS, HTML, Accessibility, Javascript and widgets using vanilla code and latest frameworks.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://css-widgets.com`,
     social: {
       twitter: `harshitpurwar`,
     },
