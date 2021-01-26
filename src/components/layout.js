@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Bio from '../components/bio'
 import '../scss/app.scss';
 import styles from './Header.module.scss';
+import logo from '../images/logo.svg';
 
 
 const Layout = ({ location, title, children }) => {
@@ -43,7 +44,7 @@ const Layout = ({ location, title, children }) => {
         <div class="fixed flex flex-col flex-shrink-0 h-screen min-w-0 min-h-0">
         <div className={`grid flex-col flex-shrink-0 items-center flex-basis z-0 min-w-0 min-h-0 relative h-full overflow-y-auto ${styles.header_block}`}>
           <div class="px-2 py-4">
-          <h1 className="logo"> <a href="/" class="flex items-center"><img src="/logo.svg" alt="CSS Widgets Logo" class="" /> <span class="logo-text">CSS WIDGETS</span></a></h1>
+          <h1 className="logo"> <a href="/" class="flex items-center"><img src={logo} alt="CSS Widgets Logo" class="" /> <span class="logo-text">CSS WIDGETS</span></a></h1>
           <Bio />
           <section id="social">
           <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/harshitpurwar" id="twitter">
