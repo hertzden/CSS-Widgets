@@ -1,8 +1,8 @@
 {
-  "name": "hp-site",
+  "name": "css-widgets",
   "version": "1.0.0",
   "private": true,
-  "description": "hp-site",
+  "description": "css-widgets",
   "author": "harshitpurwar",
   "keywords": [
     "gatsby"
