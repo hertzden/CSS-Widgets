@@ -1,0 +1,81 @@
+
+
+.wrapper {
+  padding: 2rem 3.2rem;
+}
+
+.widget {
+  position: relative;
+  &:before {
+    content: "";
+    width: 85%;
+    background: #f9fafc;
+    box-shadow: 0 3px 20px rgba(0,0,0,.04);
+    height: 100%;
+    margin-top: 1.2rem;
+    position: absolute;
+    border-radius: 0.6rem;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+  }
+}
+
+
+.well {
+  background: #fff;
+  padding: 20px;
+  border-radius: 0.6rem;
+  min-height: 140px;
+  position: relative;
+  box-shadow: 0 3px 20px rgba(0,0,0,.04);
+}
+
+
+.content {
+  background: #f1f5f8;
+  border-radius: 30px;
+}
+
+
+.zoom-in {
+    transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    --transform-translate-x: 0;
+    --transform-translate-y: 0;
+    --transform-rotate: 0;
+    --transform-skew-x: 0;
+    --transform-skew-y: 0;
+    --transform-scale-x: 1;
+    --transform-scale-y: 1;
+    transform: translateX(var(--transform-translate-x)) translateY(var(--transform-translate-y)) rotate(var(--transform-rotate)) skewX(var(--transform-skew-x)) skewY(var(--transform-skew-y)) scaleX(var(--transform-scale-x)) scaleY(var(--transform-scale-y));
+    cursor: pointer;
+}
+
+.zoom-in:hover {
+    --transform-scale-x: 1.05;
+    --transform-scale-y: 1.05;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+}
+
+.forRdO {
+  overflow: visible !important;
+}
+
+
+
+@for $i from 1 through 100 {
+  .rdt_TableRow:nth-child(#{$i}) {
+    z-index: 100 - $i;
+  }
+}
+
+
+.card {
+  transition: .3s all ease-in-out;
+    position: relative;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 30px;
+}

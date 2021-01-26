@@ -1,0 +1,24 @@
+.hero {
+  //background-image: url('../../images/banner-bg.png');
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  //background-size: cover;
+}
+.hero-banner {
+  background: url('../../images/hero-banner-6.png');
+  width: 483px;
+  height: 350px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.hero-text {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.products-list {
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}

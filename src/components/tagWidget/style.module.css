@@ -1,0 +1,45 @@
+ul.tags {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-end: 0px;
+}
+.tags {
+list-style: none;
+padding-left: 0;
+display: inline-block;
+}
+
+.tags li {
+padding: 0;
+margin: 0;
+display: inline-block;
+}
+
+.tags .tag {
+  background: rgba(0,0,0,.05);
+  color: rgba(0,0,0,.6);
+  border-radius: 3px;
+  padding: 5px 10px;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-transform: uppercase;
+}
+
+.tag:hover {
+  transition: all 0.2s;
+  background-color: hsla(45, 81%, 62%, 1);
+  color: #000;;
+}
+
+.tag:hover::after {
+  border-left-color: crimson;
+}
+
+.tags a {
+ text-decoration: none;
+}

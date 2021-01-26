@@ -1,0 +1,325 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 1024px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone-small {
+        @media only screen and (max-width: 24em) { @content };    //384px
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == phone-land {
+        @media only screen and (min-width: 667px) and (max-width: 812px) and (orientation: landscape) { @content }; // 812px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-port-ipad {
+        @media only screen and (min-width: 48em) and (max-width: 63.9em) and (orientation: portrait) { @content };     //768px to 1023px
+    }
+    @if $breakpoint == tab-land-ipad {
+        @media only screen and (min-width: 48em) and (max-width: 64em) and (orientation: landscape) { @content };     //768px to 1024px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em)  { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}
+
+
+// stylelint-disable property-blacklist
+@mixin transition($transition...) {
+  @if $enable-transitions {
+    @if length($transition) == 0 {
+      transition: $transition-base;
+    } @else {
+      transition: $transition;
+    }
+  }
+
+  @if $enable-prefers-reduced-motion-media-query {
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+}
+
+
+// stylelint-disable property-blacklist
+// Single side border-radius
+
+@mixin border-radius($radius: $border-radius, $fallback-border-radius: false) {
+  @if $enable-rounded {
+    border-radius: $radius;
+  }
+  @else if $fallback-border-radius != false {
+    border-radius: $fallback-border-radius;
+  }
+}
+
+@mixin border-top-radius($radius) {
+  @if $enable-rounded {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+}
+
+@mixin border-right-radius($radius) {
+  @if $enable-rounded {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
+}
+
+@mixin border-bottom-radius($radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+}
+
+@mixin border-left-radius($radius) {
+  @if $enable-rounded {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+  }
+}
+
+@mixin border-top-left-radius($radius) {
+  @if $enable-rounded {
+    border-top-left-radius: $radius;
+  }
+}
+
+@mixin border-top-right-radius($radius) {
+  @if $enable-rounded {
+    border-top-right-radius: $radius;
+  }
+}
+
+@mixin border-bottom-right-radius($radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: $radius;
+  }
+}
+
+@mixin border-bottom-left-radius($radius) {
+  @if $enable-rounded {
+    border-bottom-left-radius: $radius;
+  }
+}
+
+
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    $result: ();
+
+    @if (length($shadow) == 1) {
+      // We can pass `@include box-shadow(none);`
+      $result: $shadow;
+    } @else {
+      // Filter to avoid invalid properties for example `box-shadow: none, 1px 1px black;`
+      @for $i from 1 through length($shadow) {
+        @if nth($shadow, $i) != "none" {
+          $result: append($result, nth($shadow, $i), "comma");
+        }
+      }
+    }
+    @if (length($result) > 0) {
+      box-shadow: $result;
+    }
+  }
+}
+
+
+// Breakpoint viewport sizes and media queries.
+//
+// Breakpoints are defined as a map of (name: minimum width), order from small to large:
+//
+//    (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+//
+// The map defined in the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
+
+// Name of the next breakpoint, or null for the last breakpoint.
+//
+//    >> breakpoint-next(sm)
+//    md
+//    >> breakpoint-next(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    md
+//    >> breakpoint-next(sm, $breakpoint-names: (xs sm md lg xl))
+//    md
+@function breakpoint-next($name, $breakpoints: $grid-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+  $n: index($breakpoint-names, $name);
+  @return if($n != null and $n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//
+//    >> breakpoint-min(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    576px
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+// Maximum breakpoint width. Null for the largest (last) breakpoint.
+// The maximum value is calculated as the minimum of the next one less 0.02px
+// to work around the limitations of `min-` and `max-` prefixes and viewports with fractional widths.
+// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
+// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// See https://bugs.webkit.org/show_bug.cgi?id=178261
+//
+//    >> breakpoint-max(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    767.98px
+@function breakpoint-max($name, $breakpoints: $grid-breakpoints) {
+  $next: breakpoint-next($name, $breakpoints);
+  @return if($next, breakpoint-min($next, $breakpoints) - .02, null);
+}
+
+// Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front.
+// Useful for making responsive utilities.
+//
+//    >> breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    ""  (Returns a blank string)
+//    >> breakpoint-infix(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    "-sm"
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Media that spans multiple breakpoint widths.
+// Makes the @content apply between the min and max breakpoints
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+// Media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint, and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+@mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  $max: breakpoint-max($name, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($name, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($name, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+
+
+$spaceamounts: (0, 0\./5, 1, 1.5, 2, 4, 5, 8, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$sides: (all, x, y, top, bottom, left, right);
+
+@mixin make-space($property) {
+  $property-prefix: #{str-slice($property, 0, 1)};
+
+  @each $space in $spaceamounts {
+    @each $side in $sides {
+
+      @if $side == 'all' {
+        .#{$property-prefix}-#{$space} {
+          #{$property}: #{$space}rem !important;
+        }
+      } @else if $side == 'x' or $side == 'y' {
+        .#{$property-prefix}#{$side}-#{$space} {
+
+          @if $side == 'x' {
+            #{$property}-left: #{$space}rem !important;
+            #{$property}-right: #{$space}rem !important;
+          } @else {
+            #{$property}-top: #{$space}rem !important;
+            #{$property}-bottom: #{$space}rem !important;
+          }
+        }
+      } @else {
+        .#{$property-prefix}#{str-slice($side, 0, 1)}-#{$space} {
+          #{$property}-#{$side}: #{$space}rem !important;
+        }
+      }
+    }
+  }
+}

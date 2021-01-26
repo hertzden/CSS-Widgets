@@ -1,0 +1,133 @@
+.widget-count {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.widget-action {
+  justify-content: flex-end;
+}
+
+.progress {
+  background-color: #e9ecef;
+  height: 0.5rem;
+  border-radius: 5px;
+}
+
+
+.progress-bar {
+  border-radius: 5px;
+  &--purple {
+    background-color: #673AB7;
+  }
+  &--darkyellow {
+    background-color: hsla(43,100%,60%,1);
+  }
+  &--paleorange {
+    background-color: #F44336;
+  }
+  &--lightaqua {
+    background-color: #10c1d8;
+  }
+  &--violet {
+    background: #9C27B0;
+  }
+  &--lightorange {
+    background: #FF9800;
+  }
+  &--lightgreen {
+    background: #4CAF50;
+  }
+  &--navyblue {
+    background: #3F51B5;
+  }
+}
+.progress-grid {
+  grid-template-columns: 1fr 25px;
+}
+.progress-value {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  color: #8c8ab2;
+}
+
+.circle {
+  //background: #e5dbfe;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  &--green {
+    background: #0096885e;
+  }
+  &--yellow {
+    background: hsla(43,100%,60%,0.3);
+  }
+  &--orange {
+    background: #ff572275;
+  }
+  &--red {
+    background: #d21d0f;
+  }
+  &-12 {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.circle {
+  &--purple {
+    background: #673AB7;
+  }
+  &--darkyellow {
+    background: hsla(43,100%,60%,1);
+  }
+  &--paleorange {
+    background: #F44336;
+  }
+  &--lightaqua {
+    background: #10c1d8;
+  }
+  &--violet {
+    background: #9C27B0;
+  }
+  &--lightorange {
+    background: #FF9800;
+  }
+  &--lightgreen {
+    background: #4CAF50;
+  }
+  &--navyblue {
+    background: #3F51B5;
+  }
+}
+
+
+
+.widget-border {
+  .widget-row:not(:last-child) {
+    border-bottom: 1px dashed #dee5ea;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  li:not(:nth-of-type(1)) {
+    margin-left: 1.5rem;
+  }
+}
+
+.pagination a {
+    display: block;
+    padding: .5em 1em;
+    border-radius: .2em;
+    text-decoration: none;
+}

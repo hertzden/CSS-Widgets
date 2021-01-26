@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.head_block {
+    background-position: right top;
+    background-repeat: no-repeat;
+    flex-basis: auto;
+}
+.wrapper {
+  flex: 1;
+}
+.header {
+  background: #fff;
+  flex-basis: auto;
+  //border-right: 1px dashed #ddd;
+
+}
+.main {
+  flex-basis: auto;
+}
+.header_block {
+  width: 330px;
+  border-right: 1px dashed #ddd;
+}
+
+.main_block {
+  width: 940px;
+}
+
+.card {
+  border-bottom: 5px dashed #fff;
+}
+
+.card_grid {
+  //max-width: 820px;
+}
+.dice_one {
+  position: fixed;
+  left: 0;
+  z-index: 0;
+  width: 10vw;
+}
+.dice_two {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 20vw;
+}

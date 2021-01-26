@@ -1,5 +1,6 @@
 import * as React from "react"
 
+
 // styles
 const pageStyles = {
   color: "#232129",
@@ -102,7 +103,7 @@ const IndexPage = () => {
     <main style={pageStyles}>
       <title>Home Page</title>
       <h1 style={headingStyles}>
-        Congratulations
+        Congratulations ABC
         <br />
         <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
         <span role="img" aria-label="Party popper emojis">

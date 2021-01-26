@@ -1,0 +1,22 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  &--md {
+    padding: 10px;
+  }
+}
+
+
+.btn-more {
+  border: 0;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  top: 15px;
+}
+
+
+.pagination-link {
+  border: 1px solid #ddd;
+  padding: 1rem;
+}
