@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article class="p-8">
+      <article class={`p-8 md\:p-0`}>
           <header className="relative">
           <h1 className="heading-one heading-one--w-600 text-uppercase">
             {post.frontmatter.title}
@@ -37,7 +37,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-      
+
       </article>
 
       <nav>

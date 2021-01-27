@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Bio from '../components/bio'
 import '../scss/app.scss';
-import styles from './Header.module.scss';
+import styles from './Aside.module.scss';
 import logo from '../images/logo.svg';
 
 
@@ -38,15 +38,17 @@ const Layout = ({ location, title, children }) => {
   return (
     <div className="w-full">
     <a href="#main" class="skip-main">Skip to main content</a>
-    <div className={`flex flex-1  flex-row flex-shrink-0 flex-grow flex-basis w-full items-stretch relative ${styles.wrapper}`}>
+    <div className={`md\:flex-col flex flex-1  flex-row flex-shrink-0 flex-grow flex-basis w-full items-stretch relative ${styles.wrapper}`}>
     <aside className={`items-end flex flex-col flex-grow flex-shrink-0  z-3 ${styles.header}`}>
-    <div className={`flex flex-col flex-shrink-0 items-stretch flex-basis z-0 min-w-0 min-h-0 relative ${styles.header_block}`}>
-        <div class="fixed flex flex-col flex-shrink-0 h-screen min-w-0 min-h-0">
+    <div className={`flex flex-col flex-shrink-0 items-stretch flex-basis z-0 min-w-0 min-h-0 relative sm\:width-100  ${styles.header_block}`}>
+        <div class={`flex flex-col flex-shrink-0 aside_block`}>
         <div className={`grid flex-col flex-shrink-0 items-center flex-basis z-0 min-w-0 min-h-0 relative h-full overflow-y-auto ${styles.header_block}`}>
-          <div class="px-2 py-4">
-          <h1 className="logo"> <a href="/" class="flex items-center mb-2"><img src={logo} alt="CSS Widgets Logo" width="100" height="100" class="" /> <span class="logo-text">CSS WIDGETS</span></a></h1>
-          <Bio />
-          <section id="social">
+          <div class="px-2 py-4 md:p-2">
+          <h1 className="logo"> <a href="/" class="flex items-center mb-2 md:mb-0"><img src={logo} alt="CSS Widgets Logo" width="100" height="100" class="" /> <span class="logo-text">CSS WIDGETS</span></a></h1>
+          <div className={`md\:hide-mobile`}>
+            <Bio />
+          </div>
+          <section id="social" className={`md\:hide-mobile`}>
           <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/harshitpurwar" id="twitter">
           <svg width="32" height="32" viewBox="0 0 800 800"><path fill="#ddd" d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"></path></svg>
           <span className="sr-only">Opens Twitter profile of Harshit Purwar</span>
@@ -67,7 +69,7 @@ const Layout = ({ location, title, children }) => {
     </aside>
       <main role="main" className="flex flex-col flex-grow flex-shrink relative min-w-0 items-start min-h-0 m-0 p-0 items-start" id="main">
         <div className={`flex flex-col flex-grow flex-shrink relative m-0 p-0 items-stretch  ${styles.main_block}`}>
-        <div className={`py-5 pl-8 ${styles.card_grid}`}>
+        <div className={`py-5 pl-8 md\:p-6 ${styles.card_grid}`}>
           {children}
         </div>
         </div>

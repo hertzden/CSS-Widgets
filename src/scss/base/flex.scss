@@ -31,3 +31,8 @@
 .justify-between {
   justify-content: space-between;
 }
+.md\:flex-col {
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}

@@ -23,6 +23,10 @@
   user-select: none;
   pointer-events: none;
   text-transform: uppercase;
+  @media only screen and (max-width: 56.25em) {
+    font-size: 18rem;
+    left: -5rem;
+  }
   &__single {
     font-size: 26rem;
     @extend .post_title;

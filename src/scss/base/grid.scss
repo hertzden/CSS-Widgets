@@ -8,6 +8,11 @@
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.sm\:grid-cols-none {
+  @include respond(phone) {
+      grid-template-columns: none !important;
+  }
+}
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -31,6 +36,11 @@
 }
 .gap-10 {
   grid-gap: 12rem;
+}
+.md\:gap-8 {
+  @include respond(tab-port) {
+    grid-gap: 8rem;
+  }
 }
 .grid-gap-60 {
   grid-gap: 60px;

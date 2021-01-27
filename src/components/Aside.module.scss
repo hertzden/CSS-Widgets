@@ -1,6 +1,5 @@
 .wrapper {
-  display: flex;
-  align-items: stretch;
+    flex: 1;
 }
 
 .head_block {
@@ -8,9 +7,7 @@
     background-repeat: no-repeat;
     flex-basis: auto;
 }
-.wrapper {
-  flex: 1;
-}
+
 .header {
   background: #fff;
   flex-basis: auto;
@@ -23,12 +20,23 @@
 .header_block {
   width: 330px;
   border-right: 1px dashed #ddd;
+  @media only screen and (max-width: 56.25em) {
+    width: 100%;
+    border-bottom: 1px dashed #ddd;
+    border-right: 0;
+    justify-content: center;
+  }
 }
 
 .main_block {
   width: 940px;
+  @media only screen and (max-width: 56.25em) {
+    width: 100%;
+  }
 }
-
+.aside_block {
+  position: fixed;
+}
 .card {
   border-bottom: 5px dashed #fff;
 }
@@ -41,6 +49,9 @@
   left: 0;
   z-index: 0;
   width: 10vw;
+  @media only screen and (max-width: 56.25em) {
+    display: none;
+  }
 }
 .dice_two {
   position: fixed;
@@ -48,4 +59,7 @@
   bottom: 0;
   z-index: -1;
   width: 20vw;
+  @media only screen and (max-width: 56.25em) {
+    display: none;
+  }
 }

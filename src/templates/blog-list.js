@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <div className="grid grid-cols-2 gap-10 mb-8 p-4">
+        <div className={`grid grid-cols-2 sm\:grid-cols-none gap-10 md\:gap-8 mb-8 p-4 md\:p-0`}>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const titleC = node.frontmatter.titleC
@@ -41,7 +41,7 @@ class BlogIndex extends React.Component {
               <div className="text-gray mb-2 mt-1 font-1 block">Published on: {node.frontmatter.date} / {node.timeToRead} min read</div>
               <div aria-hidden="true" className={`absolute ${styles.post_title}`}>{titleC}</div>
               </header>
-              <p className="mb-5" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              <p className={`mb-5 md\:mb-3`} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
               <Link to={node.fields.slug} className={`hvr-sweep-to-right mb-2 inline-block ${styles.more_button}`}>
                 Continue Reading <span className='font-2 ml-0.5' aria-hidden="true">&#187;</span>
               </Link>
