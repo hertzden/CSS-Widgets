@@ -61,9 +61,11 @@ class BlogIndex extends React.Component {
           // }}
         >
           {!isFirst && (
-            <Link className="" to={`../${prevPage}`} rel="prev">
+            <li>
+            <Link className="previous" to={`../${prevPage}`} rel="prev">
               ← Previous Page
             </Link>
+            </li>
           )}
           {Array.from({ length: numPages }, (_, i) => (
             <li className={`${styles.pagination_list__item}`}
@@ -85,9 +87,11 @@ class BlogIndex extends React.Component {
             </li>
           ))}
           {!isLast && (
-            <Link className="" to={`../${nextPage}`} rel="next">
+            <li>
+            <Link className="next" to={`../${nextPage}`} rel="next">
               Next Page →
             </Link>
+            </li>
           )}
         </ul>
         </nav>

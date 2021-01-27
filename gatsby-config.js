@@ -3,8 +3,8 @@ module.exports = {
     title: `Front-end Technologies | CSS, HTML, Accessibility`,
     author: {
       name: `Harshit Purwar`,
-      jobsummary: `(UX Engineer, Design System Aficionado, Jamstack, Accessibility)`,
-      summary: `CSS Widgets is purely focused on CSS, HTML, Accessibility, Javascript and widgets using vanilla code and latest frameworks.`,
+      jobsummary: `(I'm a User Experience Engineer from India 🇮🇳 and works on Design System, CSS Layouts, Jamstack, Accessibility with an eye on design).`,
+      summary: `CSS Widgets is purely focused on CSS, HTML, Accessibility, Javascript and widgets comprising both vanilla code and latest frameworks.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://css-widgets.com`,
