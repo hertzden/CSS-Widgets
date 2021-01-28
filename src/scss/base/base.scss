@@ -24,6 +24,13 @@ html {
     max-width: 100%;
   }
 }
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow: auto scroll;
+  overscroll-behavior-y: none;
+}
 body {
   background: #ffffff;
 }
@@ -32,3 +39,27 @@ body {
 //         max-width: 100%;
 //     }
 // }
+
+a.skip-main {
+    left: -999px;
+    position: absolute;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+}
+
+a.skip-main:active, a.skip-main:focus {
+    color: #d33a2c;
+    background-color: #fff;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    padding: .5em 1em;
+    text-align: center;
+    font-size: 1.2em;
+    z-index: 999;
+}
