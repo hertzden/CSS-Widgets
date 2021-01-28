@@ -1,5 +1,9 @@
 .logo {
   font-family: 'Megrim', cursive;
+  @include respond(tab-port) {
+    padding: 0 11rem 2rem;
+    border-bottom: 1px dashed #ddd;
+  }
 }
 .logo img {
   margin-bottom: 0;
@@ -15,8 +19,7 @@
   align-self: flex-end;
   padding-left: 10px;
   @include respond(tab-port) {
-    font-size: 2.8rem;
-    max-width: 12.8rem;
+    font-size: 3rem;
   }
 }
 a {
