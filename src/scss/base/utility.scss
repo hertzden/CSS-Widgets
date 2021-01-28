@@ -156,6 +156,12 @@ border-width: 0;
   }
 }
 
+.lg\:hide-desktop {
+  @media (min-width: 992px){
+    display: none;
+  }
+}
+
 .sm\:width-100 {
   @include respond(phone) {
     width: 100%;
