@@ -42,6 +42,11 @@ module.exports = {
             options: {
               maxWidth: 590,
             },
+            resolve:"@weknow/gatsby-remark-codepen",
+          options: {
+            theme: "dark",
+            height: 400
+          }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
@@ -60,7 +65,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `G-LHTW9V1F9R`,
       },
     },
     `gatsby-plugin-feed`,
