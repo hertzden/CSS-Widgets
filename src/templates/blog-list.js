@@ -78,8 +78,8 @@ class BlogIndex extends React.Component {
 
                   textDecoration: 'none',
                   color: i + 1 === currentPage ? '#ffffff' : '',
-                  background: i + 1 === currentPage ? '#007acc' : '',
-                  borderColor: i + 1 === currentPage ? '#007acc' : '',
+                  background: i + 1 === currentPage ? 'hsla(230, 92%, 61%, 1)' : '',
+                  borderColor: i + 1 === currentPage ? 'hsla(230, 92%, 61%, 1)' : '',
                 }}
               >
                 {i + 1}

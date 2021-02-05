@@ -109,7 +109,7 @@ ol, ul {
     border: 0 solid #e2e8f0;
 }
 a {
-  color: hsla(186, 99%, 26%, 1);
+  color: var(--textLink);
 
 }
 .text-center {

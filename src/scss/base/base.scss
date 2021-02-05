@@ -37,7 +37,7 @@ body {
   --textHeadingOne: #222;
   --textButton: #444;
   --textGray: $color-black-4;
-  --textLink: blue;
+  --textLink: hsla(230, 92%, 61%, 1);
   --hr: hsla(0, 0%, 0%, 0.2);
   --textUltraGray: rgba(0,0,0,.05);
   --border: #ddd;
@@ -54,7 +54,7 @@ body.dark {
   --textHeadingOne: hsla(351, 90%, 80%, 1);
   --textButton: #f0f0f;
   --textUltraGray: hsla(45, 81%, 62%, 0.01);
-  --textLink: yellow;
+  --textLink: hsla(230, 100%, 67%, 1);
   --border: hsl(45deg 100% 80% / 11%);
   --hr: hsla(0, 0%, 100%, 0.2);
   --color-toggle: hsla(45, 81%, 62%, 1);
