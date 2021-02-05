@@ -6,7 +6,7 @@ class MyComponent extends React.Component {
     return (
       <ThemeToggler>
         {({ theme, toggleTheme }) => (
-          <div className="py-1 relative checkbox-group mb-2">
+          <div className="py-1 md:p-1 relative checkbox-group mb-2 md:mb-0">
             <input
               type="checkbox"
               className="checkbox"
@@ -32,7 +32,7 @@ class MyComponent extends React.Component {
             </svg>
             </span>
             <label for="checkbox-toggle" >
-            {theme === 'dark' ? 'Light' : 'Dark'} mode
+            Switch to {theme === 'dark' ? 'Light' : 'Dark'} mode
           </label>
           </div>
         )}
