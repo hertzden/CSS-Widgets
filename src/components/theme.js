@@ -15,7 +15,7 @@ class ThemeToggleComponent extends React.Component {
               checked={theme === 'dark'}
             />
             <span className="checkbox-decorator">
-            <svg width="18" height="18" viewBox="0 0 18 18" class="DarkModeToggle__MoonOrSun-sc-1ngd9fq-1 dBeOcn" style={{transform: 'rotate(90deg)'}}>
+            <svg width="18" height="18" viewBox="0 0 18 18" className="DarkModeToggle__MoonOrSun-sc-1ngd9fq-1 dBeOcn" style={{transform: 'rotate(90deg)'}}>
               <mask id="moon-mask-main-nav">
                 <rect x="0" y="0" width="18" height="18" fill="#FFF"></rect>
                 <circle cx="25" cy="0" r="8" fill="yellow"></circle>
@@ -31,7 +31,7 @@ class ThemeToggleComponent extends React.Component {
                 </g>
             </svg>
             </span>
-            <label for="checkbox-toggle" >
+            <label htmlFor="checkbox-toggle" >
             Switch theme
           </label>
           </div>

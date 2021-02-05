@@ -41,20 +41,19 @@ const Layout = ({ location, title, children }) => {
           color: 'var(--textNormal)',
           transition: 'color 0.2s ease-out, background 0.2s ease-out',
         }}>
-    <a href="#main" class="skip-main">Skip to main content</a>
+    <a href="#main" className="skip-main">Skip to main content</a>
 
     <div className={`md:flex-col flex flex-1  flex-row flex-shrink-0 flex-grow flex-basis w-full items-stretch relative ${styles.wrapper}`}>
     <aside className={`items-end flex flex-col flex-grow flex-shrink-0  z-3 ${styles.header}`}>
     <div className={`flex flex-col flex-shrink-0 items-stretch flex-basis z-0 min-w-0 min-h-0 relative sm:width-100   ${styles.header_block}`}>
-        <div class={`flex flex-col flex-shrink-0 aside_block`}>
+        <div className={`flex flex-col flex-shrink-0 aside_block`}>
         <div className={`grid flex-col flex-shrink-0 items-center flex-basis z-0 min-w-0 min-h-0 relative h-full side-border overflow-y-auto ${styles.header_block}`}>
-          <div class="px-2 py-4 md:p-2">
-          <h1 className="logo"> <a href="/" class="flex items-center mb-2 md:mb-0"><img src={logo} alt="CSS Widgets Logo" width="100" height="100" class="" /> <span class="logo-text">CSS WIDGETS</span></a></h1>
+          <div className="px-2 py-4 md:p-2">
+          <h1 className="logo"> <a href="/" className="flex items-center mb-4 md:mb-0"><img src={logo} alt="CSS Widgets Logo" width="80" height="80" /> <span className="logo-text">CSS WIDGETS</span></a></h1>
           <div className={`md:hide-mobile`}>
             <Bio />
-            <ThemeToggleComponent />
           </div>
-
+          <ThemeToggleComponent />
 
           <section id="social" className={`md:hide-mobile`}>
           <h2 className="font-family-2">Get in touch:</h2>
@@ -76,6 +75,8 @@ const Layout = ({ location, title, children }) => {
       <rect fill="#e0deff" width="316" height="265"></rect><rect fill="#fa9eac" x="236" y="206" width="316" height="265"></rect>
       </svg>
 
+
+
     </aside>
       <main role="main" className="flex flex-col flex-grow flex-shrink relative min-w-0 items-start min-h-0 m-0 p-0 items-start" id="main">
         <div className={`flex flex-col flex-grow flex-shrink relative m-0 p-0 items-stretch  ${styles.main_block}`}>
@@ -91,9 +92,7 @@ const Layout = ({ location, title, children }) => {
         </svg>
       </main>
       <div className={`lg:hide-desktop p-4 text-center`}>
-        <div className="mb-4">
-          <ThemeToggleComponent />
-        </div>
+
         <Bio />
         <section id="social">
         <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/harshitpurwar">

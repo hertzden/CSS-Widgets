@@ -47,6 +47,9 @@
   align-items: center;
   @include respond(tab-port) {
     justify-content: center;
+    position: absolute;
+    z-index: 2;
+    right: 10px;
   }
   label {
     padding-left: 5px;
