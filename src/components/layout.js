@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import MyComponent from '../components/theme'
+import ThemeToggleComponent from '../components/theme'
 import Bio from '../components/bio'
 import '../scss/app.scss';
 import styles from './Aside.module.scss';
@@ -52,8 +52,9 @@ const Layout = ({ location, title, children }) => {
           <h1 className="logo"> <a href="/" class="flex items-center mb-2 md:mb-0"><img src={logo} alt="CSS Widgets Logo" width="100" height="100" class="" /> <span class="logo-text">CSS WIDGETS</span></a></h1>
           <div className={`md:hide-mobile`}>
             <Bio />
+            <ThemeToggleComponent />
           </div>
-          <MyComponent />
+
 
           <section id="social" className={`md:hide-mobile`}>
           <h2 className="font-family-2">Get in touch:</h2>
@@ -90,6 +91,9 @@ const Layout = ({ location, title, children }) => {
         </svg>
       </main>
       <div className={`lg:hide-desktop p-4 text-center`}>
+        <div className="mb-4">
+          <ThemeToggleComponent />
+        </div>
         <Bio />
         <section id="social">
         <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/harshitpurwar">

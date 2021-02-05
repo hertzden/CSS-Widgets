@@ -26,13 +26,13 @@
   color: var(--textButton);
 }
 .checkbox {
-  width: 100px;
+  width: 120px;
     position: absolute;
     left: 0;
     opacity: 0;
     z-index: 1;
     padding: 10px;
-    height: 28px;
+    height: 38px;
     top: 6px;
     cursor: pointer;
 }
@@ -46,8 +46,7 @@
   display: flex;
   align-items: center;
   @include respond(tab-port) {
-    position: absolute;
-    right: 0;
+    justify-content: center;
   }
   label {
     padding-left: 5px;

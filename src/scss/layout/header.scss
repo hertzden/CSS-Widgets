@@ -2,7 +2,7 @@
   font-family: 'Megrim', cursive;
   @include respond(tab-port) {
     padding: 0 11rem 2rem;
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 1px dashed var(--border);
   }
 }
 .logo img {

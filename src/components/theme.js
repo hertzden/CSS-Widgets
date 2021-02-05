@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
-class MyComponent extends React.Component {
+class ThemeToggleComponent extends React.Component {
   render() {
     return (
       <ThemeToggler>
@@ -32,7 +32,7 @@ class MyComponent extends React.Component {
             </svg>
             </span>
             <label for="checkbox-toggle" >
-            Switch to {theme === 'dark' ? 'Light' : 'Dark'} mode
+            Switch theme
           </label>
           </div>
         )}
@@ -42,4 +42,4 @@ class MyComponent extends React.Component {
 }
 
 
-export default MyComponent
+export default ThemeToggleComponent
