@@ -1,11 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
+
 import TagPreview from "../components/tagWidget/TagPreview"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import styles from './Bloglist.module.scss';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -20,15 +20,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article class={`p-8 md\:p-0`}>
-          <header className="relative">
+      <article class={`p-8 md:p-0`}>
+        <header className="relative">
           <h1 className="heading-one heading-one--w-600 text-uppercase">
             {post.frontmatter.title}
           </h1>
           <div aria-hidden="true" className={`absolute ${styles.post_title__single}`}>{post.frontmatter.titleC}</div>
           <div className="text-gray mb-2 mt-1 font-1 block">Published on: {post.frontmatter.date} / {post.timeToRead} min read</div>
-
-
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <TagPreview value={tags}/>
@@ -37,9 +35,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
-
       </article>
-
       <nav>
         <ul
           style={{
@@ -71,7 +67,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 }
 
 export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {

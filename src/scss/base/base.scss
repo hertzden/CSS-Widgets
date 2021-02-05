@@ -32,7 +32,32 @@ html {
   overscroll-behavior-y: none;
 }
 body {
-  background: #ffffff;
+  --bg: white;
+  --textNormal: #222;
+  --textHeadingOne: #222;
+  --textButton: #444;
+  --textGray: $color-black-4;
+  --textLink: blue;
+  --hr: hsla(0, 0%, 0%, 0.2);
+  --textUltraGray: rgba(0,0,0,.05);
+  --border: #ddd;
+  background-color: var(--bg);
+  --color-toggle: #000;
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #0c1213;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --textTitle: white;
+  --textHeadingOne: hsla(351, 90%, 80%, 1);
+  --textButton: #f0f0f;
+  --textUltraGray: hsla(45, 81%, 62%, 0.01);
+  --textLink: yellow;
+  --border: hsl(45deg 100% 80% / 11%);
+  --hr: hsla(0, 0%, 100%, 0.2);
+  --color-toggle: hsla(45, 81%, 62%, 1);
 }
 // @media (min-width: 812px) and (max-width: 1024px) {
 //     .container {

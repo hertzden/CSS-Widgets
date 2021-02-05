@@ -4,14 +4,13 @@
   font-weight: 600;
   font-family: 'Josefin Sans';
   text-transform: uppercase;
-  color: #333;
 }
 
 .post_title {
   font-size: 20rem;
   line-height: 1.2;
   font-family: 'Josefin Sans';
-  color: rgba(0,0,0,.05);
+  color: var(--textUltraGray);
   z-index: 1;
   position: absolute;
   top: 50%;
@@ -39,7 +38,6 @@
   line-height: 1.4rem;
   font-weight: 600;
   font-family: 'Josefin Sans';
-  color: #444;
   text-transform: uppercase;
   max-height: 36px;
   display: inline-flex;

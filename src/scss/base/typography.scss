@@ -1,6 +1,6 @@
 body {
-  font-family: 'Domine', sans-serif;
-  font-size: 1.4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1.5rem;
   color: #444;
 
 }
@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 4.8rem;
   line-height: 1.2;
-  color: #333;
+  color: var(--textHeadingOne);
   &--dark {
     color: #161a21;
   }
@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 3.2rem;
   line-height: 1.2;
   font-weight: 600;
+  color: var(--textNormal);
   &--md {
     font-size: 2.4rem;
   }
@@ -49,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #8c8ab2;
   }
   a {
-    color: $color-black-2;
+    color: var(--textHeadingOne);
       &:hover, &:focus {
         color: #f86377;
       }
@@ -134,7 +135,7 @@ p {
   text-transform: uppercase;
 }
 .text-gray {
-  color: $color-black-4;
+  color: var(--textGray);
 }
 
 

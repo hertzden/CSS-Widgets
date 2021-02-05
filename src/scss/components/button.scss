@@ -17,6 +17,35 @@
 
 
 .pagination-link {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   padding: 1rem;
+}
+
+
+.primary-button {
+  color: var(--textButton);
+}
+.checkbox {
+  width: 100px;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    padding: 10px;
+    height: 28px;
+    top: 6px;
+    cursor: pointer;
+}
+
+.checkbox-decorator {
+    height: 18px;
+    z-index: 0;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  label {
+    padding-left: 5px;
+  }
 }

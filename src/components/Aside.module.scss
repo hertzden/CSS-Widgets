@@ -9,7 +9,6 @@
 }
 
 .header {
-  background: #fff;
   flex-basis: auto;
   //border-right: 1px dashed #ddd;
 
@@ -19,7 +18,7 @@
 }
 .header_block {
   width: 330px;
-  border-right: 1px dashed #ddd;
+  
   @media only screen and (max-width: 56.25em) {
     width: 100%;
     border-right: 0;
@@ -30,6 +29,7 @@
 
 .main_block {
   width: 940px;
+  z-index: 1;
   @media only screen and (max-width: 56.25em) {
     width: 100%;
   }
@@ -57,7 +57,7 @@
   position: fixed;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 0;
   width: 20vw;
   @media only screen and (max-width: 56.25em) {
     display: none;

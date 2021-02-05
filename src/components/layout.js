@@ -1,19 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
+import MyComponent from '../components/theme'
 import Bio from '../components/bio'
 import '../scss/app.scss';
 import styles from './Aside.module.scss';
 import logo from '../images/logo.svg';
 
 
+
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   let header
-
   if (location.pathname === rootPath) {
     header = (
       <h1> {title} </h1>
-
     )
   } else {
     header = (
@@ -36,19 +36,26 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div className="w-full">
+    <div className="w-full" style={{
+          backgroundColor: 'var(--bg)',
+          color: 'var(--textNormal)',
+          transition: 'color 0.2s ease-out, background 0.2s ease-out',
+        }}>
     <a href="#main" class="skip-main">Skip to main content</a>
-    <div className={`md\:flex-col flex flex-1  flex-row flex-shrink-0 flex-grow flex-basis w-full items-stretch relative ${styles.wrapper}`}>
+
+    <div className={`md:flex-col flex flex-1  flex-row flex-shrink-0 flex-grow flex-basis w-full items-stretch relative ${styles.wrapper}`}>
     <aside className={`items-end flex flex-col flex-grow flex-shrink-0  z-3 ${styles.header}`}>
-    <div className={`flex flex-col flex-shrink-0 items-stretch flex-basis z-0 min-w-0 min-h-0 relative sm\:width-100  ${styles.header_block}`}>
+    <div className={`flex flex-col flex-shrink-0 items-stretch flex-basis z-0 min-w-0 min-h-0 relative sm:width-100   ${styles.header_block}`}>
         <div class={`flex flex-col flex-shrink-0 aside_block`}>
-        <div className={`grid flex-col flex-shrink-0 items-center flex-basis z-0 min-w-0 min-h-0 relative h-full overflow-y-auto ${styles.header_block}`}>
+        <div className={`grid flex-col flex-shrink-0 items-center flex-basis z-0 min-w-0 min-h-0 relative h-full side-border overflow-y-auto ${styles.header_block}`}>
           <div class="px-2 py-4 md:p-2">
           <h1 className="logo"> <a href="/" class="flex items-center mb-2 md:mb-0"><img src={logo} alt="CSS Widgets Logo" width="100" height="100" class="" /> <span class="logo-text">CSS WIDGETS</span></a></h1>
-          <div className={`md\:hide-mobile`}>
+          <div className={`md:hide-mobile`}>
             <Bio />
           </div>
-          <section id="social" className={`md\:hide-mobile`}>
+          <MyComponent />
+          <h2 className="font-family-2">Get in touch:</h2>
+          <section id="social" className={`md:hide-mobile`}>
           <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/harshitpurwar">
           <svg width="32" height="32" viewBox="0 0 800 800"><path fill="#ddd" d="M679 239s-21 34-55 57c7 156-107 329-314 329-103 0-169-50-169-50s81 17 163-45c-83-5-103-77-103-77s23 6 50-2c-93-23-89-110-89-110s23 14 50 14c-84-65-34-148-34-148s76 107 228 116c-22-121 117-177 188-101 37-6 71-27 71-27s-12 41-49 61c30-2 63-17 63-17z"></path></svg>
           <span className="sr-only">Opens Twitter profile of Harshit Purwar</span>
@@ -66,10 +73,11 @@ const Layout = ({ location, title, children }) => {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 552 471" className={`${styles.dice_one}`}>
       <rect fill="#e0deff" width="316" height="265"></rect><rect fill="#fa9eac" x="236" y="206" width="316" height="265"></rect>
       </svg>
+
     </aside>
       <main role="main" className="flex flex-col flex-grow flex-shrink relative min-w-0 items-start min-h-0 m-0 p-0 items-start" id="main">
         <div className={`flex flex-col flex-grow flex-shrink relative m-0 p-0 items-stretch  ${styles.main_block}`}>
-        <div className={`py-5 pl-8 md\:p-6 ${styles.card_grid}`}>
+        <div className={`py-5 pl-8 md:p-6 ${styles.card_grid}`}>
           {children}
         </div>
         </div>
@@ -80,7 +88,7 @@ const Layout = ({ location, title, children }) => {
         <rect fill="#ffe69b" y="530" width="316" height="265"></rect>
         </svg>
       </main>
-      <div className={`lg\:hide-desktop p-4 text-center`}>
+      <div className={`lg:hide-desktop p-4 text-center`}>
         <Bio />
         <section id="social">
         <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/harshitpurwar">

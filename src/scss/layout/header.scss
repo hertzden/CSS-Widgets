@@ -14,7 +14,7 @@
 }
 .logo-text {
   font-size: 4rem;
-  color: #000;
+  color: var(--textNormal);
   font-weight: 600;
   align-self: flex-end;
   padding-left: 10px;
@@ -39,6 +39,10 @@ a {
     position: static;
     height: auto;
   }
+}
+
+.side-border {
+  border-right: 1px dashed var(--border);
 }
 // .app-logo__box {
 //   background: $logo-color;

@@ -76,7 +76,7 @@
 .card {
   transition: .3s all ease-in-out;
     position: relative;
-    border-bottom: 1px dashed #ddd;
+    border-bottom: 1px dashed var(--border);
     padding-bottom: 30px;
     @include respond(tab-port) {
       padding-bottom: 1.5rem;
