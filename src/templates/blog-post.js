@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article class={`p-8 md:p-0`}>
+      <article class={`p-4 md:p-0`}>
         <header className="relative">
           <h1 className="heading-one heading-one--w-600 text-uppercase">
             {post.frontmatter.title}
@@ -37,13 +37,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         />
       </article>
       <nav>
-        <ul
+        <ul className="px-4"
           style={{
             display: `flex`,
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0,
           }}
         >
           <li>

@@ -48,7 +48,7 @@ const Layout = ({ location, title, children }) => {
     <div className={`flex flex-col flex-shrink-0 items-stretch flex-basis z-0 min-w-0 min-h-0 relative sm:width-100   ${styles.header_block}`}>
         <div className={`flex flex-col flex-shrink-0 aside_block`}>
         <div className={`grid flex-col flex-shrink-0 items-center flex-basis z-0 min-w-0 min-h-0 relative h-full side-border overflow-y-auto ${styles.header_block}`}>
-          <div className="px-2 py-4 md:p-2">
+          <div className="px-4 py-4 md:p-2">
           <h1 className="logo"> <a href="/" className="flex items-center mb-4 md:mb-0"><img src={logo} alt="CSS Widgets Logo" width="80" height="80" /> <span className="logo-text">CSS WIDGETS</span></a></h1>
           <div className={`md:hide-mobile`}>
             <Bio />
