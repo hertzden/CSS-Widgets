@@ -18,13 +18,12 @@ display: inline-block;
 }
 
 .tags .tag {
-  background: rgba(0,0,0,.05);
-  color: rgba(0,0,0,.6);
+  background: var(--tagsBG);
+  color: var(--textNormal);
   border-radius: 3px;
   padding: 5px 10px;
   display: inline-block;
   margin: 0 10px 10px 0;
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 1.2rem;
   line-height: 1.8rem;
   text-transform: uppercase;

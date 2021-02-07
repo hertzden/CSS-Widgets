@@ -8,6 +8,7 @@
 
 .post_title {
   font-size: 20rem;
+  font-weight: 600;
   line-height: 1.2;
   font-family: 'Josefin Sans';
   color: var(--textUltraGray);
@@ -22,6 +23,7 @@
   user-select: none;
   pointer-events: none;
   text-transform: uppercase;
+  display: none;
   @media only screen and (max-width: 56.25em) {
     font-size: 18rem;
     left: -5rem;

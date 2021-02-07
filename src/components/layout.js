@@ -80,7 +80,7 @@ const Layout = ({ location, title, children }) => {
     </aside>
       <main role="main" className="flex flex-col flex-grow flex-shrink relative min-w-0 items-start min-h-0 m-0 p-0 items-start" id="main">
         <div className={`flex flex-col flex-grow flex-shrink relative m-0 p-0 items-stretch  ${styles.main_block}`}>
-        <div className={`py-5 pl-8 md:p-6 ${styles.card_grid}`}>
+        <div className={`py-5 md:p-4 ${styles.card_grid}`}>
           {children}
         </div>
         </div>
