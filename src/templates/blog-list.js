@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <div className={`grid grid-cols-2 sm:grid-cols-none gap-10 md:gap-8 mb-8 p-4 md:p-0`}>
+        <div className={`grid grid-cols-2 md:grid-cols-none gap-10 md:gap-8 mb-8 p-4 md:p-0`}>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const titleC = node.frontmatter.titleC
