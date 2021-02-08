@@ -37,7 +37,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         />
       </article>
       <nav>
-        <ul className="px-4"
+        <ul className=""
           style={{
             display: `flex`,
             flexWrap: `wrap`,
