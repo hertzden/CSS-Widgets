@@ -155,6 +155,11 @@ border-width: 0;
     display: none;
   }
 }
+.sm\:hide-mobile {
+  @include respond(phone) {
+    display: none;
+  }
+}
 
 .lg\:hide-desktop {
   @media (min-width: 992px){

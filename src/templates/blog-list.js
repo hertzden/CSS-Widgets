@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 
-        <div className={`grid grid-cols-2 md:grid-cols-none gap-10 md:gap-8 mb-8 p-4 md:p-0`}>
+        <div className={`grid grid-cols-2 md:grid-cols-none gap-10 md:gap-6 sm:gap-4 mb-8 p-4 md:p-0`}>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           const titleC = node.frontmatter.titleC
@@ -50,20 +50,11 @@ class BlogIndex extends React.Component {
         })}
         </div>
         <nav aria-label="pagination" className="flex justify-center">
-        <ul className="pagination flex"
-          // style={{
-          //   display: 'flex',
-          //   flexWrap: 'wrap',
-          //   justifyContent: 'center',
-          //   alignItems: 'center',
-          //   listStyle: 'none',
-          //   padding: 0,
-          // }}
-        >
+        <ul className="pagination flex">
           {!isFirst && (
             <li>
-            <Link className="previous" to={`../${prevPage}`} rel="prev">
-              ← Previous Page
+            <Link className="previous sm:pagination-link" to={`../${prevPage}`} rel="prev">
+              <span>←</span> <span className="sm:hide-mobile">Previous Page</span>
             </Link>
             </li>
           )}
@@ -88,8 +79,8 @@ class BlogIndex extends React.Component {
           ))}
           {!isLast && (
             <li>
-            <Link className="next" to={`../${nextPage}`} rel="next">
-              Next Page →
+            <Link className="next sm:pagination-link" to={`../${nextPage}`} rel="next">
+               <span className="sm:hide-mobile">Next Page</span> <span>→</span>
             </Link>
             </li>
           )}

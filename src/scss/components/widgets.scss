@@ -20,3 +20,16 @@
         padding: .5em 0;
     }
 }
+
+
+.pagination-link {
+  border: 1px solid var(--border);
+  padding: 1rem;
+}
+
+.sm\:pagination-link {
+  @include respond(phone) {
+    border: 1px solid var(--border);
+    padding: .5em 1em !important;
+  }
+}

@@ -42,9 +42,14 @@
 .gap-10 {
   grid-gap: 12rem;
 }
-.md\:gap-8 {
+.md\:gap-6 {
+  @include respond(tab-land) {
+    grid-gap: 6rem;
+  }
+}
+.sm\:gap-4 {
   @include respond(tab-port) {
-    grid-gap: 8rem;
+    grid-gap: 4rem;
   }
 }
 .grid-gap-60 {
