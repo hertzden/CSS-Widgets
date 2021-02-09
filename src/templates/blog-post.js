@@ -5,7 +5,6 @@ import { Link, graphql } from "gatsby"
 import TagPreview from "../components/tagWidget/TagPreview"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import styles from './Bloglist.module.scss';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -30,13 +29,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <TagPreview value={tags}/>
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
+        <hr/>
       </article>
-      <nav>
+      <nav className="px-4 md:p-0">
         <ul className=""
           style={{
             display: `flex`,
