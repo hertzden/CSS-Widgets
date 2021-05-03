@@ -1,5 +1,5 @@
 import { PageComponents, Providers } from 'components/Global'
-import "@fontsource/Megrim"
+import "@fontsource/megrim"
 import "@fontsource/titillium-web"
 import "@fontsource/titillium-web/600.css"
 import "@fontsource/titillium-web/700.css"
