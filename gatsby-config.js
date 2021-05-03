@@ -1,6 +1,6 @@
 const macros = require(`./src/utils/katex`)
 const rssOptions = require(`./src/utils/rss`)
-const sitemapOptions = require(`./src/utils/sitemap`)
+
 
 require(`dotenv`).config()
 
@@ -22,6 +22,7 @@ const gatsbyRemarkPlugins = [
   `gatsby-remark-code-titles`,
   `gatsby-remark-sub-sup`,
   `gatsby-remark-autolink-headers`,
+  `gatsby-plugin-sitemap`,
   {
     resolve: `gatsby-remark-vscode`,
     options: { extensions: [`mdx`, `vscode-styled-components`] },
@@ -98,10 +99,6 @@ const plugins = [
     options: rssOptions,
   },
   {
-    resolve: `gatsby-plugin-sitemap`,
-    options: sitemapOptions,
-  },
-  {
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: siteMetadata.title,
@@ -114,7 +111,13 @@ const plugins = [
   },
   `gatsby-plugin-lodash`,
   `gatsby-plugin-react-helmet`,
-  `gatsby-plugin-netlify-cache`,
 ]
 
-module.exports = { siteMetadata, plugins }
+module.exports = {
+  siteMetadata,
+  plugins,
+  flags: {
+      PRESERVE_FILE_DOWNLOAD_CACHE: true,
+      PRESERVE_WEBPACK_CACHE: true
+    }
+  }
