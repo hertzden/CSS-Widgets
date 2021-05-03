@@ -1,4 +1,3 @@
-import 'katex/dist/katex.min.css'
 import { createGlobalStyle } from 'styled-components'
 import { mediaQueries, screens } from 'utils/mediaQueries'
 import { typography } from 'utils/constants'
@@ -63,11 +62,7 @@ html {
   p {
     margin: 0 0 1rem 0;
   }
-  /* Prevent wide equations from breaking layout. */
-  .katex-display {
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
+
   blockquote, details {
     border-left: 0.25em solid var(--color-link);
     background: var(--color-accentBackground);

@@ -1,4 +1,3 @@
-const macros = require(`./src/utils/katex`)
 const rssOptions = require(`./src/utils/rss`)
 
 
@@ -26,10 +25,6 @@ const gatsbyRemarkPlugins = [
   {
     resolve: `gatsby-remark-vscode`,
     options: { extensions: [`mdx`, `vscode-styled-components`] },
-  },
-  {
-    resolve: `gatsby-remark-katex`,
-    options: { macros, throwOnError: false },
   },
   {
     resolve: `gatsby-remark-images`,
@@ -79,12 +74,6 @@ const plugins = [
       trackingId: `G-LHTW9V1F9R`,
     },
   },
-  {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `harshitpurwar`
-      }
-    },
   // {
   //   resolve: `gatsby-plugin-algolia`,
   //   options: {
