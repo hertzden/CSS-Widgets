@@ -8,8 +8,5 @@ public
 # deploy config
 .netlify
 
-# environment variables
-.env*
-
 # draft posts
 content/posts/drafts
