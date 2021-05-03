@@ -27,6 +27,7 @@ export const TagGrid = styled.div`
     padding-left: 3rem;
     position: relative;
     display: flex;
+    align-items: center;
     &::before {
         display: block;
         background-color:#6272d0;
@@ -47,12 +48,13 @@ export const TagGrid = styled.div`
 
 
 export const TagCloud = styled.div`
-  display: flex;
+  display: ${props => (props.open ? `flex` : `none`)};
   flex-wrap: wrap;
   justify-content: center;
   height: max-content;
   margin-bottom: ${props => (props.open ? `3rem` : 0)};
   ${mediaQueries.minTablet} {
+    display: flex;
     background: var(--color-boxBackground);
     border-radius: 1rem;
     box-shadow: 1px 1px 5px 0 rgb(1 1 1 / 5%);
@@ -67,6 +69,7 @@ export const TagCloud = styled.div`
 
 export const Tag = styled.button`
   font-size: 1.4rem;
+  font-family: inherit;
   padding: 0.6rem 1.2rem;
   margin: 0 10px 10px 0;
   display: flex;
@@ -76,7 +79,6 @@ export const Tag = styled.button`
   width: max-content;
   white-space: nowrap;
   color: ${p => (p.active ? `var(--color-activeTagLink)` : `var(--color-link)`)};
-  font-weight: 300;
   border-radius: 5px;
   border: 2px solid var(--color-background);
   background: transparent;
@@ -109,7 +111,7 @@ export const Toggle = styled(ToggleOff).attrs(props => ({
 }))`
   margin-left: 0.5em;
   cursor: pointer;
-  color: var(--color-text);
+  color: var(--color-heading);
   ${mediaQueries.minTablet} {
     display: none;
   }

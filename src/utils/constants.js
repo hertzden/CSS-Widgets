@@ -140,7 +140,7 @@ export const MODE_COLORS = {
 }
 
 export const typography = {
-  fonts: `-apple-system, "Titillium Web", Roboto, "Helvetica Neue", Arial, sans-serif`,
+  fonts: `"Titillium Web", Roboto, "Helvetica Neue", Arial, sans-serif`,
   // font sizes and line heights in em units
   minFontSize: 0.9,
   maxFontSize: 1.1,

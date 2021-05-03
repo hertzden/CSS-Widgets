@@ -14,19 +14,12 @@ html {
   body {
     margin: 0;
     hyphens: auto;
+    font: -apple-system;
     font-family: ${fonts};
     font-size: 1.6rem;
-    line-height: ${minLineHeight}em;
+    line-height: 2.8rem;
     /* Fix very large font size in code blocks in iOS Safari (https://stackoverflow.com/a/3428477). */
     -webkit-text-size-adjust: 100%;
-    ${mediaQueries.minPhone} {
-      font-size: 1.6rem;
-      line-height: calc(${minLineHeight}em + (${maxLineHeight} - ${minLineHeight}) * ((100vw - ${phone}em) / (${desktop} - ${phone})));
-    }
-    ${mediaQueries.minDesktop} {
-      font-size: 1.6rem;
-      line-height: 2.8rem;
-    }
     &.banner.open {
         overflow: hidden;
     }

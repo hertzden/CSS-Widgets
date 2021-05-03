@@ -48,11 +48,12 @@ export const Title = styled.div`
   text-transform: uppercase;
   align-self: flex-end;
   padding-left: 10px;
-  max-width: 170px;
+  max-width: 125px;
   color: var(--color-text);
   ${mediaQueries.minTablet} {
     font-size: 3.6rem;
     line-height: 4rem;
+    max-width: 150px;
   }
 `
 

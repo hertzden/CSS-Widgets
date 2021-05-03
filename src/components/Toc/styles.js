@@ -54,6 +54,7 @@ export const Title = styled.h2`
   margin: 0;
   padding-bottom: 0.5em;
   display: flex;
+  align-items: center;
   color: var(--color-gray);
 `
 
