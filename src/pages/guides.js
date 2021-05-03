@@ -27,7 +27,7 @@ export default function LatestPage({ data }) {
       </PageTitle>*/}
       <Wrapper>
       <PageBody>
-      
+
         {/*<H>Recent posts</H>*/}
         <PostList noText posts={posts.nodes} />
         {/*<H>Recent projects</H>*/}
@@ -87,7 +87,6 @@ export const query = graphql`
     mdx(fileAbsolutePath: { regex: "/landing.md/" }) {
       frontmatter {
         title
-        ...cover
       }
       body
     }
