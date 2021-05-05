@@ -3,6 +3,7 @@ import { mediaQueries, screens } from 'utils/mediaQueries'
 import { typography } from 'utils/constants'
 
 
+
 const { phone, desktop } = screens
 const { fonts, minFontSize, maxFontSize, minLineHeight, maxLineHeight } = typography
 
@@ -16,7 +17,7 @@ html {
     hyphens: auto;
     font: -apple-system;
     font-family: ${fonts};
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 2.8rem;
     /* Fix very large font size in code blocks in iOS Safari (https://stackoverflow.com/a/3428477). */
     -webkit-text-size-adjust: 100%;
@@ -40,12 +41,35 @@ html {
       }
     }
   }
+  a.skip-main {
+      left: -999px;
+      position: absolute;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      z-index: -999;
+  }
+
+  a.skip-main:active, a.skip-main:focus {
+      color: #d33a2c;
+      background-color: #fff;
+      left: 10px;
+      top: 10px;
+      width: auto;
+      height: auto;
+      overflow: auto;
+      padding: .5em 1em;
+      text-align: center;
+      font-size: 1.2em;
+      z-index: 999;
+  }
   h1, h2, h3, h4, h5, h6 {
     line-height: initial;
     letter-spacing: 1px;
   }
   h1 {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--color-heading);
   }
   h2, h3, h4, h5, h6 {
@@ -53,16 +77,26 @@ html {
     color: var(--color-heading);
   }
   p {
-    margin: 0 0 1rem 0;
+    margin: 0 0 2rem 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+  iframe {
+    margin: 3rem 0;
   }
 
   blockquote, details {
     border-left: 0.25em solid var(--color-link);
-    background: var(--color-accentBackground);
+    background: var(--color-blockquoteBG);
     padding: 0.1em 0.3em 0.1em 1em;
-    margin: 0;
+    margin: 3rem 0 4rem 0;
     summary {
-      font-weight: bold;
+      font-weight: 600;
+    }
+    p {
+      margin: 2rem 0;
     }
   }
   .sr-only {
@@ -159,14 +193,18 @@ html {
     // border-radius: 10px;
     transition: transform 250ms ease,box-shadow 250ms ease,color 250ms ease;
     margin: 0 0 3rem 0;
-    letter-spacing: 1px;
+    //letter-spacing: 1px;
     line-height: 3.6rem;
-    // color: var(--color-bodyText);
+    color: var(--color-articleText);
     h2, h3, h4, h5, h6 {
       color: var(--color-postHeading);
+      margin: 1rem 0;
       svg {
         fill: var(--color-postHeading);
       }
+    }
+    h2 {
+      font-size: 3rem;
     }
   }
   pre.grvsc-container {
@@ -174,6 +212,9 @@ html {
   }
   .gatsby-code-title {
     background: #ecc54f;
+  }
+  [class*="elements__"], [class^="elements__"] {
+    background: #17242f !important;
   }
   div.scroll {
     overflow: scroll;

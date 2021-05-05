@@ -35,7 +35,7 @@ export const Box = styled.div`
     margin-bottom: 20px;
     p {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
     }
   }
   .social {

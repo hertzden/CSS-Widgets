@@ -27,7 +27,7 @@ export const PostGridWrapper = styled.div`
   }
 h2 {
   margin: 0 0 3rem 0;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 600;
   text-transform: uppercase;
   position: relative;

@@ -22,6 +22,8 @@ const gatsbyRemarkPlugins = [
   `gatsby-remark-sub-sup`,
   `gatsby-remark-autolink-headers`,
   `gatsby-plugin-sitemap`,
+  `gatsby-transformer-remark`,
+  `gatsby-remark-embedder`,
   {
     resolve: `gatsby-remark-vscode`,
     options: { extensions: [`mdx`, `vscode-styled-components`] },
@@ -45,10 +47,22 @@ const plugins = [
     resolve: `gatsby-plugin-mdx`,
     options: {
       gatsbyRemarkPlugins,
-      plugins: [`gatsby-remark-images`, `gatsby-remark-autolink-headers`],
+      plugins: [`gatsby-remark-images`, `gatsby-remark-autolink-headers`, `@weknow/gatsby-remark-codepen`, `gatsby-remark-embedder`],
       extensions: [`.mdx`, `.md`],
     },
   },
+  {
+  resolve: `gatsby-remark-embedder`,
+    options: {
+    customTransformers: [
+      // Your custom transformers
+    ],
+    services: {
+      // The service-specific options by the name of the service
+      
+    },
+  },
+},
   {
     resolve: `gatsby-transformer-sharp`,
     options: {
@@ -73,6 +87,13 @@ const plugins = [
     options: {
       trackingId: `G-LHTW9V1F9R`,
     },
+  },
+  {
+    resolve:"@weknow/gatsby-remark-codepen",
+    options: {
+      theme: "dark",
+      height: 400
+    }
   },
   // {
   //   resolve: `gatsby-plugin-algolia`,

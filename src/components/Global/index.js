@@ -1,6 +1,6 @@
 import { MDXProvider } from '@mdx-js/react'
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+import React, { useEffect }  from 'react'
 import SyntaxHighlight from 'utils/syntaxHighlight'
 import Footer from '../Footer'
 import Header from '../Header'
@@ -12,12 +12,15 @@ import { GlobalStyle } from './styles'
 
 const components = { LazyPlot, DocsGrid }
 
+
 export const Providers = ({ children }) => (
   <MDXProvider components={components}>
     {children}
     <Scroll showBelow={1500} css="position: fixed; right: 1em; bottom: 1em;" />
   </MDXProvider>
 )
+
+
 
 export function PageComponents({ children, ...rest }) {
   const { site } = useStaticQuery(graphql`
@@ -36,6 +39,7 @@ export function PageComponents({ children, ...rest }) {
       <GlobalStyle />
       <SyntaxHighlight />
       <SEO title="CSS Widgets" />
+      <a href="#skip-to-main-content" className="skip-main">Skip to content</a>
       <Header {...site} />
       {children}
       <Footer />

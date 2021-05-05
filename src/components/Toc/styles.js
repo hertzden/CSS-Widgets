@@ -13,7 +13,7 @@ export const TocDiv = styled.aside`
   height: max-content;
   max-height: 80vh;
   z-index: 3;
-  line-height: 2.2em;
+  line-height: 2.4rem;
   right: 1em;
   max-width: 27rem;
   overscroll-behavior: none;
@@ -36,7 +36,7 @@ export const TocDiv = styled.aside`
     transition: 0.3s;
   }
   ${mediaQueries.minTablet} {
-    font-size: 0.85em;
+    font-size: 1.6rem;
     grid-column: 1;
     position: sticky;
     top: 20rem;
@@ -64,6 +64,8 @@ export const TocLink = styled.a`
   font-weight: ${props => props.active && `600`};
   display: block;
   margin-left: ${props => props.depth + `em`};
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `
 
 export const TocIcon = styled(BookContent)`

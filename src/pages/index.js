@@ -27,7 +27,7 @@ export default function IndexPage({ data }) {
       {/*<PageTitle img={img}>
         <h1>Blog</h1>
       </PageTitle>*/}
-      <Wrapper>
+      <Wrapper id="skip-to-main-content">
         <PageBody>
           <ModeDevice>
             <TagList {...{ tags, activeTag, setActiveTag }} />

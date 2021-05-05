@@ -31,13 +31,15 @@ export const Post = styled.article`
   }
   p {
     margin: 0 0 1rem 0;
+    font-size: 1.6rem;
+    letter-spacing: 0.1px;
   }
 `
 
 export const Cover = styled(Img).attrs(
   ({ fluid, src }) => !fluid && src && { as: `img` }
 )`
-  height: calc(10em + 4vh);
+  height: calc(16rem + 4vh);
   width: 100%;
   object-fit: cover;
   border-radius: 5px 5px 0 0;

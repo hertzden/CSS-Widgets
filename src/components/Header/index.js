@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import DarkToggle from '../DarkToggle'
 import Nav from '../Nav'
 import { HeaderDiv, HeaderDivInner, Logo, Title, Hero, Mode, ModeDevice } from './styles'
@@ -12,7 +12,15 @@ const searchIndices = [
 
 
 export default function Header({ site, title }) {
-  
+useEffect(() => {
+  const gatsbyFocusWrapper =
+   document.getElementById('gatsby-focus-wrapper')
+   if (gatsbyFocusWrapper) {
+      gatsbyFocusWrapper.removeAttribute('style');
+      gatsbyFocusWrapper.removeAttribute('tabIndex');
+     }
+   },
+  [])
   return (
     <>
     <HeaderDiv>

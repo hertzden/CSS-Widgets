@@ -1,6 +1,9 @@
 import { Link } from 'gatsby'
+import { typography } from 'utils/constants'
 import styled from 'styled-components'
 import { mediaQueries } from 'utils/mediaQueries'
+
+const { logoFont } = typography
 
 export const HeaderDiv = styled.header`
   height: 105px;
@@ -43,7 +46,7 @@ flex-basis: 33.33%;
 export const Title = styled.div`
   font-size: 3rem;
   line-height: 3.2rem;
-  font-family: 'Megrim', cursive;
+  font-family: ${logoFont};
   font-weight: 600;
   text-transform: uppercase;
   align-self: flex-end;

@@ -28,7 +28,7 @@ const languageTags = langTagColor.map(
   ({ lang, tag, color }) =>
     `pre.grvsc-container[data-language="${lang}"]::before {
         content: '${tag}';
-        background: ${color};
+        background: #17242f;
       }`
 )
 
@@ -37,22 +37,26 @@ export default createGlobalStyle`
 
   pre.grvsc-container {
     position: relative;
-    background: #050431;
+    background: #17242f;
     border-radius: 0.5em;
-    line-height: 1.5em
+    line-height: 1.5em;
+    margin: 5rem 0 3rem 0;
+    padding: 3rem 0;
+    overflow: visible;
   }
 
   pre.grvsc-container[data-language]::before {
     position: absolute;
-    top: 0;
+    top: -35px;
     right: 2em;
-    padding: 0.2em 0.5em;
-    font-size: 0.8em;
-    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 2rem;
+    font-weight: 400;
     line-height: initial;
     text-transform: uppercase;
-    border-radius: 0 0 0.2em 0.2em;
-    color: black;
+    border-radius: 5px 5px 0px 0px;
+    font-family: 'Baloo 2';
+    color: #ecc54f;
   }
 
   .gatsby-code-title {
@@ -63,6 +67,7 @@ export default createGlobalStyle`
     margin: 1em 0 -1.6em 1em;
     border-radius: 0.3em;
     position: relative;
+    top: 2.3rem;
     z-index: 1;
     font-size: 0.8em;
     line-height: initial;

@@ -121,6 +121,14 @@ export const MODE_COLORS = {
     light: gray.default,
     dark: gray.darkest,
   },
+  articleText: {
+    light: `#0a0c10`,
+    dark: `#9a9e9e`,
+  },
+  blockquoteBG: {
+    light: `#e2edf7`,
+    dark: `#17252f`,
+  },
   a: {
     light: orange.default,
     dark: orange.darker,
@@ -140,8 +148,9 @@ export const MODE_COLORS = {
 }
 
 export const typography = {
-  fonts: `"Titillium Web", Roboto, "Helvetica Neue", Arial, sans-serif`,
+  fonts: `"Baloo 2", Roboto, "Helvetica Neue", Arial, sans-serif`,
   // font sizes and line heights in em units
+  logoFont: `'Megrim', cursive`,
   minFontSize: 0.9,
   maxFontSize: 1.1,
   minLineHeight: 1.5,

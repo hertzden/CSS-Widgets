@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/15.14.0/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js install
+  /usr/local/Cellar/node/15.14.0/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add @johnlindquist/gatsby-remark-embed-codesanbox
 
 PATH: 
   /Users/harshit.purwar/.rvm/gems/ruby-2.6.3/bin:/Users/harshit.purwar/.rvm/gems/ruby-2.6.3@global/bin:/Users/harshit.purwar/.rvm/rubies/ruby-2.6.3/bin:/Users/harshit.purwar/gems/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/harshit.purwar/Applications/instantclient_19_3:/Users/harshit.purwar/apache-maven-3.6.1/bin:/Users/harshit.purwar/Applications/instantclient_19_3:/Users/harshit.purwar/.rvm/bin
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/harshit.purwar/CSS-Widgets/package.json: Unexpected string in JSON at position 2766
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:304:30)
-      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:315:13
+  Error: https://registry.yarnpkg.com/@johnlindquist%2fgatsby-remark-embed-codesanbox: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:66830:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:140464:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141436:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
 
 npm manifest: 
   {
@@ -42,6 +47,7 @@ npm manifest:
       "@styled-icons/remix-line": "^10.18.0",
       "algoliasearch": "^4.5.1",
       "babel-plugin-styled-components": "^1.11.1",
+      "disqus-react": "^1.0.11",
       "exifreader": "^3.12.3",
       "gatsby": "^3.3.1",
       "gatsby-cli": "^3.3.0",
@@ -99,7 +105,7 @@ npm manifest:
     "scripts": {
       "develop": "gatsby develop",
       "start": "gatsby develop",
-      "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages"
+      "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
       "serve": "gatsby serve",
       "clean": "gatsby clean"
     },
@@ -5962,6 +5968,11 @@ Lockfile:
     integrity sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==
     dependencies:
       path-type "^4.0.0"
+  
+  disqus-react@^1.0.11:
+    version "1.0.11"
+    resolved "https://registry.yarnpkg.com/disqus-react/-/disqus-react-1.0.11.tgz#7949923320835310666cbfc77aae90577711434a"
+    integrity sha512-DZGc6kk16EGLAJtJAn+EdNHy44pBD0QJnuuOSyMf6qqsZrIYwkBFe72mdvRKfGYD1toR7bAvkRjmec/YQTrG+w==
   
   dns-equal@^1.0.0:
     version "1.0.0"
