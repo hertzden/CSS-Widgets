@@ -51,7 +51,7 @@ export const Title = styled.div`
   text-transform: uppercase;
   align-self: flex-end;
   padding-left: 10px;
-  max-width: 127px;
+  max-width: 132px;
   color: var(--color-text);
   ${mediaQueries.minTablet} {
     font-size: 3.6rem;
