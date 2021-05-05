@@ -73,6 +73,12 @@ export default createGlobalStyle`
     line-height: initial;
   }
 
+  .grvsc-code {
+    display: flex !important;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
   /* highlighted lines */
   :root {
     --grvsc-line-highlighted-background-color: rgba(255, 255, 255, 0.2); /* default unchanged */

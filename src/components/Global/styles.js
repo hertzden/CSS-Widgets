@@ -205,6 +205,7 @@ html {
     }
     h2 {
       font-size: 3rem;
+      line-height: 4rem;
     }
   }
   pre.grvsc-container {

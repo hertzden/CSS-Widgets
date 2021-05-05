@@ -89,6 +89,7 @@ export const ToggleButton = styled.button`
   position: fixed;
   left: 0;
   top: 30%;
+  z-index: 2;
   ${mediaQueries.maxTablet} {
     top: 22%;
   }
