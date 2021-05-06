@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
+
 const langTagColor = [
   { lang: `javascript`, tag: `js`, color: `#f7df1e` },
   { lang: `js`, tag: `js`, color: `#f7df1e` },
@@ -28,7 +29,7 @@ const languageTags = langTagColor.map(
   ({ lang, tag, color }) =>
     `pre.grvsc-container[data-language="${lang}"]::before {
         content: '${tag}';
-        background: #17242f;
+        background: #142325;
       }`
 )
 
@@ -37,7 +38,7 @@ export default createGlobalStyle`
 
   pre.grvsc-container {
     position: relative;
-    background: #17242f;
+    background: #142325;
     border-radius: 0.5em;
     line-height: 1.5em;
     margin: 5rem 0 3rem 0;
@@ -77,6 +78,9 @@ export default createGlobalStyle`
     display: flex !important;
     overflow: auto;
     flex-wrap: wrap;
+    font-family: "Fira Code", Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+    font-size: 1.6rem;
+    line-height: 2;
 }
 
   /* highlighted lines */

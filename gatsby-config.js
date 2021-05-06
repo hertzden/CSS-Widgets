@@ -59,7 +59,7 @@ const plugins = [
     ],
     services: {
       // The service-specific options by the name of the service
-      
+
     },
   },
 },

@@ -16,6 +16,20 @@ Introduction of CSS Grid Layout is the best addition in modern css, it help us b
 
 While it solves complex layout design and opens new path for implementing any sort of design layouts across devices (laptop, large desktop, tablet, phone, phablet etc...). But at the same time incorrect implementation leads to accessibility issues for keyboard users and screen readers. Let's dive straight into it.
 
+```javascript
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
+```
+
 ## Visual vs. Logical Reordering
 
 While CSS Grid enables reordering of content in various ways, but it should only be used for visual, not logical reordering of content. Here is an example of simple grid consist of 2 rows and 3 columns, both have common markup but different output based on styling:

@@ -189,7 +189,7 @@ html {
     max-width: 780px;
     // background: var(--color-boxBackground);
     // box-shadow: 1px 1px 5px 0 rgb(1 1 1 / 5%);
-    // padding: 0 2.5rem;
+    // padding: 2rem 4rem;
     // border-radius: 10px;
     transition: transform 250ms ease,box-shadow 250ms ease,color 250ms ease;
     margin: 0 0 3rem 0;
@@ -207,9 +207,6 @@ html {
       font-size: 3rem;
       line-height: 4rem;
     }
-  }
-  pre.grvsc-container {
-    background: #17242f;
   }
   .gatsby-code-title {
     background: #ecc54f;
