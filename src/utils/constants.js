@@ -150,7 +150,7 @@ export const MODE_COLORS = {
 export const typography = {
   fonts: `"Baloo 2", Roboto, "Helvetica Neue", Arial, sans-serif`,
   // font sizes and line heights in em units
-  logoFont: `'Megrim', cursive`,
+  logoFont: `'Megrim', "Baloo 2"`,
   minFontSize: 0.9,
   maxFontSize: 1.1,
   minLineHeight: 1.5,

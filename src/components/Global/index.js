@@ -9,6 +9,7 @@ import Scroll from '../Scroll'
 import SEO from '../Seo'
 import { DocsGrid } from '../styles'
 import { GlobalStyle } from './styles'
+import "@fontsource/megrim"
 
 const components = { LazyPlot, DocsGrid }
 
