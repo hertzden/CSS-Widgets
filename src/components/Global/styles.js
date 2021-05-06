@@ -85,6 +85,7 @@ html {
   }
   iframe {
     margin: 3rem 0;
+    border: 2px solid rgb(21, 21, 21) !important;
   }
 
   blockquote, details {

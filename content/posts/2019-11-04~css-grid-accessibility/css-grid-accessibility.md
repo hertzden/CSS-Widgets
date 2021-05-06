@@ -16,20 +16,6 @@ Introduction of CSS Grid Layout is the best addition in modern css, it help us b
 
 While it solves complex layout design and opens new path for implementing any sort of design layouts across devices (laptop, large desktop, tablet, phone, phablet etc...). But at the same time incorrect implementation leads to accessibility issues for keyboard users and screen readers. Let's dive straight into it.
 
-```javascript
-// In your gatsby-config.js
-plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        `gatsby-remark-prismjs`,
-      ]
-    }
-  }
-]
-```
-
 ## Visual vs. Logical Reordering
 
 While CSS Grid enables reordering of content in various ways, but it should only be used for visual, not logical reordering of content. Here is an example of simple grid consist of 2 rows and 3 columns, both have common markup but different output based on styling:
@@ -43,7 +29,9 @@ While CSS Grid enables reordering of content in various ways, but it should only
 
 Well solution is simple and elegant, just move 4th link in markup after 2nd and it will not be an issue any more. Below you can see code in action as well:
 
-https://codesandbox.io/s/css-grid-ck85m?view=split?codemirror=1
+### Codesandbox
+
+https://codesandbox.io/s/css-grid-ck85m?codemirror=1
 
 ## Flat markup vs. Semantic markup
 
@@ -51,7 +39,9 @@ Well CSS Grid solves lot of problems, but one should be extra careful while writ
 
 So what happens next is, when some developer wants to create grid structure there may need arise to flatten out markup for whatever reason but it will break semantic meaning of layout and leads to accessibility issues. Let's take a classic example of **header** layout consist of **logo and navigation** links.
 
-Below are the sample code of flatten markup and semantic markup
+Below are the sample code snippets of flatten markup and semantic markup
+
+### Code Snippets
 
 ``` HTML:title=Flatten-Markup
   <header class="grid-container">
@@ -64,6 +54,15 @@ Below are the sample code of flatten markup and semantic markup
     <a href="#" class="nav-link">Contact</a>
   </header>
 ```
+
+### Lost semantic
+
+Here comes the real issue with flatten markup and it will cause huge inconvenience to screen reader users, as there is no to communicate presence of navigation in it. It will announce flat links in header.
+
+### The correct approach
+
+Using right semantic structure, we can achieve desired output as well as make things easier for screen reader users. Below markup in snippet is slightly different from above with right native HTML tags. Now screen reader will announce navigation with multiple list items of links.
+
 
 ``` HTML:title=Semantic-Markup
   <header class="grid-container grid-container-semantic
@@ -82,9 +81,9 @@ Below are the sample code of flatten markup and semantic markup
   </header>
 ```
 
-From both markup same output can be achieved, but it will cause huge inconvenience to screen reader users, as there is no way they come to know about navigation, while they will be able to traverse all links but with incomplete information.
+You can see how both markup are slightly different, but desired output can be achieved using CSS Grid. See it in action:
 
-To showcase same, you can look it into action in below codesandbox:
+### Codesandbox
 
 https://codesandbox.io/s/css-grid-faltten-19s7d
 

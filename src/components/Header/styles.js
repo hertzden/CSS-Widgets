@@ -15,9 +15,9 @@ export const Title = styled.div`
     background-position: center center;
     filter: brightness(var(--color-filter));
     ${mediaQueries.minTablet} {
-      width: 200px;
-      height: 82px;
-      background-position: -10px;
+      width: 160px;
+      height: 80px;
+      background-position: 5px;
     }
 `
 
