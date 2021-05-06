@@ -4,6 +4,7 @@ import Nav from '../Nav'
 import { HeaderDiv, HeaderDivInner, Logo, Title, Hero, Mode, ModeDevice } from './styles'
 import logo from '../../images/logo.svg';
 
+
 const searchIndices = [
   { name: `Pages`, title: `Pages` },
   { name: `Posts`, title: `Blog Posts`, type: `postHit` },
@@ -29,7 +30,7 @@ useEffect(() => {
           <img src="/logo.svg" alt="CSS Widgets Logo" height="80" width="80" /> <Title>CSS Widgets</Title>
         </Logo>*/}
         <Logo to="/" title={site.title} rel="home">
-          <img src={logo} alt="CSS Widgets Logo" className="logo" /> <Title>CSS Widgets</Title>
+          <img src={logo} alt="CSS Widgets Logo" className="logo" /><Title />
         </Logo>
         <ModeDevice>
           <DarkToggle />

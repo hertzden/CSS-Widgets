@@ -145,6 +145,10 @@ export const MODE_COLORS = {
     light: orange.darker,
     dark: orange.darkest,
   },
+  filter: {
+    light: `0`,
+    dark: `1`,
+  }
 }
 
 export const typography = {

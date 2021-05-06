@@ -50,7 +50,7 @@ export const NavDiv = styled.nav`
         border-radius: 10px;
       }
       ${mediaQueries.minTablet} {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
       }
     }
   }

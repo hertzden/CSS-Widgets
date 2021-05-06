@@ -68,7 +68,7 @@ export const TagCloud = styled.div`
 `
 
 export const Tag = styled.button`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: inherit;
   padding: 0.6rem 1.2rem;
   margin: 0 10px 10px 0;
