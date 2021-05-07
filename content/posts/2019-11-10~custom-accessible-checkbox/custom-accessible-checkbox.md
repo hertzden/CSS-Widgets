@@ -39,15 +39,44 @@ Basic markup of single checkbox is pretty much straight forward, `input[type="ch
   </div>
 ```
 
-### CSS code snippet
+## Checkbox CSS
 
-```CSS:title=Custom checkbox CSS
+Here we see what modern CSS can do, let's go step by step while creating custom checkbox:
+
+### Step 1:
+
+Visually hide `input[type=checkbox]` using `position:absolute` property. Then take it off screen and using left/right properties.
+
+```CSS:title=Visually-hide-input
   .checkbox {
     position: absolute;
     left: -99999px;
     right: auto;
   }
+```
+### Step 2:
 
+Create new element using `+` adjacent sibling and `::before` pseudo properties. Combine checkbox class and pseudo `<label>` element.
+
+```CSS:title=Pseudo-and-adjacent-selector
+  .checkbox + label::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2px solid #000;
+  }
+```
+
+### Step 3:
+
+At his stage new element is created but things are scattered over places, as `label` element needs to styled. Align label horizontally and vertically using `display:flex` properties and adding cursor property as well.
+
+> **Note:** Here `user-select:none` is an important aspect, as it will prevent label text selection on check/un-check of checkbox. This is very annoying and leads to accessibility issues.
+
+``` CSS:title=label
   label {
     display: flex;
     align-items: center;
@@ -55,24 +84,15 @@ Basic markup of single checkbox is pretty much straight forward, `input[type="ch
     padding-left: 46px;
     position: relative;
     min-height: 32px;
-    display: inline-flex;
-    align-items: center;
     user-select: none;
   }
-  .checkbox + label::before {
-    border: 2px solid #000;
-    content: "";
-    height: 28px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 28px;
-  }
-  .checkbox:checked + label::before {
-    background: #0f70d2;
-    border-color: #0f70d2;
-  }
+```
 
+### Step 4:
+
+At this last step, tick mark is created using `border` and `transition` properties on pseudo element `::after`. Tick mark visibility is managed by `opacity`. And then add `background-color`  and `border-color` to highlight selection.
+
+```CSS:title=Check-uncheck-checkbox
   .checkbox:checked + label::after {
     content: "";
     width: 6px;
@@ -88,83 +108,17 @@ Basic markup of single checkbox is pretty much straight forward, `input[type="ch
     transition: opacity 0.2s ease-in-out;
     color: #fff;
   }
-
   .checkbox:checked + label::after {
     opacity: 1;
   }
+  .checkbox:checked + label::before {
+    background: #0f70d2;
+    border-color: #0f70d2;
+  }
 ```
-
-While it solves complex layout design and opens new path for implementing any sort of design layouts across devices (laptop, large desktop, tablet, phone, phablet etc...). But at the same time incorrect implementation leads to accessibility issues for keyboard users and screen readers. Let's dive straight into it.
-
-## Visual vs. Logical Reordering
-
-While CSS Grid enables reordering of content in various ways, but it should only be used for visual, not logical reordering of content. Here is an example of simple grid consist of 2 rows and 3 columns, both have common markup but different output based on styling:
-
-* First one is correct order of grid
-* While second is tweaked with grid-row property
-
-> These columns have link, so visually user will see **4th link in 1st row**, but screen readers and keyboard user will encounter problem, as tabbing will jump to **3rd link in 2nd row** then back to **4th link on 1st row**.
-
-### Solution
-
-Well solution is simple and elegant, just move 4th link in markup after 2nd and it will not be an issue any more. Below you can see code in action as well:
 
 ### Codesandbox
 
-https://codesandbox.io/s/css-grid-ck85m?codemirror=1
-
-## Flat markup vs. Semantic markup
-
-Well CSS Grid solves lot of problems, but one should be extra careful while writing markup. To create a grid all items should be direct child of container, any items which are not direct child will not inherit `display: grid` property.
-
-So what happens next is, when some developer wants to create grid structure there may need arise to flatten out markup for whatever reason but it will break semantic meaning of layout and leads to accessibility issues. Let's take a classic example of **header** layout consist of **logo and navigation** links.
-
-Below are the sample code snippets of flatten markup and semantic markup
-
-### Code Snippets
-
-``` HTML:title=Flatten-Markup
-  <header class="grid-container">
-    <a href="#" class="logo">
-      <img src="https://logoipsum.com/logo/logo-10.svg">
-    </a>
-    <a href="#" class="nav-link">Home</a>
-    <a href="#" class="nav-link">About</a>
-    <a href="#" class="nav-link">Services</a>
-    <a href="#" class="nav-link">Contact</a>
-  </header>
-```
-
-### Lost semantic
-
-Here comes the real issue with flatten markup and it will cause huge inconvenience to screen reader users, as there is no to communicate presence of navigation in it. It will announce flat links in header.
-
-### The correct approach
-
-Using right semantic structure, we can achieve desired output as well as make things easier for screen reader users. Below markup in snippet is slightly different from above with right native HTML tags. Now screen reader will announce navigation with multiple list items of links.
-
-
-``` HTML:title=Semantic-Markup
-  <header class="grid-container grid-container-semantic
-  grid-container--three">
-    <a href="#" class="logo">
-      <img src="https://logoipsum.com/logo/logo-10.svg">
-    </a>
-    <nav class="top-nav top-nav--semantic">
-      <ul>
-        <li><a href="#" class="nav-link">Home</a></li>
-        <li><a href="#" class="nav-link">About</a></li>
-        <li><a href="#" class="nav-link">Services</a></li>
-        <li><a href="#" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-```
-
-You can see how both markup are slightly different, but desired output can be achieved using CSS Grid. See it in action:
-
-### Codesandbox
-
-https://codesandbox.io/s/css-grid-faltten-19s7d
+https://codesandbox.io/s/custom-accessible-checkbox-tpih1?codemirror=1
 
 > So, note to self always use semantic markup over flatten markup, though later one saves your time or say it will double your work, once you think of accessibility and decides to re-write it.
