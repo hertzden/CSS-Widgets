@@ -1,16 +1,98 @@
 ---
-title: CSS Grid and Accessibility
-slug: /css-grid-accessibility
-date: 2019-11-04
+title: Custom Accessible Checkbox
+slug: /custom-accessible-checkbox
+date: 2019-11-10
 cover:
-  img: grid.jpg
+  img: checkbox.jpg
 tags:
   - CSS Grid
   - Accessibility
 showToc: true
 ---
 
-Introduction of CSS Grid Layout is the best addition in modern css, it help us build more complex layout designs using a two-dimensional way, using both rows and columns.
+Now a days custom checkbox styles are part of every design, while it's an enhancement over native element it possess challenge if implementation goes wrong. Not only keyboard users, screen readers and even mouse users will face problem while filling up forms.
+
+## Key Consideration
+
+Developing custom checkbox and make it easy to use, do consider these points:
+
+* Must be accessible
+* Perfectly aligned to label
+* Preventing text selection
+* Focus styles
+* Labels are associated with inputs
+
+Let's look at sample design consist of various custom checkboxes, this is pretty much we are gonna build and implementing above points.
+
+![Custom checkbox graphics](custom-checkbox.jpg)
+
+## Checkbox HTML
+
+Basic markup of single checkbox is pretty much straight forward, `input[type="checkbox"]` followed by `label`, and input id is associated with label for attribute using same value. This is all we need in terms of markup.
+
+### HTML code snippet
+
+```HTML:title=Single-checkbox
+  <div class="checkbox-row">
+    <input type="checkbox" name="checkbox_default" id="checkbox_one" class="checkbox" />
+    <label for="checkbox_one">Checkbox Default</label>
+  </div>
+```
+
+### CSS code snippet
+
+```CSS:title=Custom checkbox CSS
+  .checkbox {
+    position: absolute;
+    left: -99999px;
+    right: auto;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 46px;
+    position: relative;
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  .checkbox + label::before {
+    border: 2px solid #000;
+    content: "";
+    height: 28px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+  }
+  .checkbox:checked + label::before {
+    background: #0f70d2;
+    border-color: #0f70d2;
+  }
+
+  .checkbox:checked + label::after {
+    content: "";
+    width: 6px;
+    height: 14px;
+    position: absolute;
+    top: 6px;
+    left: 13px;
+    border: 2px solid;
+    border-left: 0;
+    border-top: 0;
+    opacity: 0;
+    transform: rotate(45deg);
+    transition: opacity 0.2s ease-in-out;
+    color: #fff;
+  }
+
+  .checkbox:checked + label::after {
+    opacity: 1;
+  }
+```
 
 While it solves complex layout design and opens new path for implementing any sort of design layouts across devices (laptop, large desktop, tablet, phone, phablet etc...). But at the same time incorrect implementation leads to accessibility issues for keyboard users and screen readers. Let's dive straight into it.
 

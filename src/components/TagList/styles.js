@@ -11,11 +11,14 @@ import {
 } from 'styled-icons/fa-solid'
 import { ToggleOn, ToggleOff} from 'styled-icons/material-outlined'
 import { Cpu } from 'styled-icons/feather'
-import { Lab, Sigma } from 'styled-icons/icomoon'
+import { Grid1x2 } from 'styled-icons/bootstrap'
+import { Accessibility } from 'styled-icons/ionicons-outline'
 import { ColorLens, Web } from 'styled-icons/material'
 import { WeatherSunny } from 'styled-icons/typicons'
 import { mediaQueries } from 'utils/mediaQueries'
 export { Tags as TagsIcon } from 'styled-icons/bootstrap'
+
+
 
 export const TagGrid = styled.div`
   margin: 0;
@@ -70,7 +73,7 @@ export const TagCloud = styled.div`
 export const Tag = styled.button`
   font-size: 1.6rem;
   font-family: inherit;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1rem;
   margin: 0 10px 10px 0;
   display: flex;
   align-items: center;
@@ -121,14 +124,8 @@ export const tagIcons = {
   All: Grid,
   'Web Dev': Web,
   Tutorial: ChalkboardTeacher,
-  'Machine Learning': Brain,
+  Accessibility: Accessibility,
   'Data Science': Database,
-  Sustainability: WeatherSunny,
-  Science: Lab,
-  Design: ColorLens,
-  Technology: Cpu,
-  Future: Robot,
+  'CSS Grid': Grid1x2,
   JS: Html5,
-  Python,
-  Statistics: Sigma,
 }

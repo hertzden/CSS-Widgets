@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import { mediaQueries, screens } from 'utils/mediaQueries'
 import { typography } from 'utils/constants'
+import arrow from '../../images/circle-arrow.svg';
 
 
 
@@ -87,7 +88,10 @@ html {
     margin: 3rem 0;
     border: 2px solid rgb(21, 21, 21) !important;
   }
-
+  ::selection {
+    color: var(--color-textHighlight);
+    background: var(--color-outline);
+  }
   blockquote, details {
     border-left: 0.25em solid var(--color-link);
     background: var(--color-blockquoteBG);
@@ -205,8 +209,35 @@ html {
       }
     }
     h2 {
-      font-size: 3rem;
-      line-height: 4rem;
+      font-size: 2.6rem;
+      line-height: 3.6rem;
+      ${mediaQueries.minTablet} {
+        font-size: 3rem;
+        line-height: 4rem;
+      }
+    }
+    h3 {
+      font-size: 2.2rem;
+      line-height: 3rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 10px;
+    }
+    ul li {
+      display: flex;
+      align-items: center;
+    }
+    ul li:before {
+      content: '';
+      position: relative;
+      color: #0099cc;
+      background: url(${arrow}) no-repeat center;
+      background-size: 16px;
+      width: 16px;
+      height: 16px;
+      padding-left: 24px;
+      //filter: brightness(var(--color-filter));
     }
   }
   .gatsby-code-title {

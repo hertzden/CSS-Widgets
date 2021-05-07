@@ -123,7 +123,7 @@ export const MODE_COLORS = {
   },
   articleText: {
     light: `#0a0c10`,
-    dark: `#9a9e9e`,
+    dark: `#b5bdbd`,
   },
   blockquoteBG: {
     light: `#e2edf7`,
@@ -144,6 +144,10 @@ export const MODE_COLORS = {
   d: {
     light: orange.darker,
     dark: orange.darkest,
+  },
+  textHighlight: {
+    light: `#f0f0f0`,
+    dark: `#0d1314`,
   },
   filter: {
     light: `0`,

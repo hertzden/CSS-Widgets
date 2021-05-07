@@ -17,11 +17,12 @@ export const PageTitleDiv = styled.hgroup`
   padding: 0 2rem;
   h1 {
     font-weight: 600;
-    font-size: 4.4rem;
-    line-height: 4.8rem;
+    font-size: 3.6rem;
+    line-height: 4.2rem;
     margin: 1rem 0;
     ${mediaQueries.minTablet} {
       font-size: 5.4rem;
+      line-height: 6rem;
     }
   }
   /* prettier-ignore */

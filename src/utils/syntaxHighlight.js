@@ -41,7 +41,7 @@ export default createGlobalStyle`
     background: #142325;
     border-radius: 0.5em;
     line-height: 1.5em;
-    margin: 5rem 0 3rem 0;
+    margin: 5rem 0;
     padding: 3rem 0;
     overflow: visible;
   }

@@ -14,7 +14,7 @@ import { Link } from 'gatsby'
 export const NavDiv = styled.nav`
   align-items: center;
   /* transition: 0.3s; */
-  color: var(--color-text);
+  color: var(--color-link);
   button {
     position: absolute;
     top: 35px;
