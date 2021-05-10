@@ -15,6 +15,7 @@ export const query = graphql`
     cover {
       source
       url
+      caption
       img {
         ...sharpSrc
       }

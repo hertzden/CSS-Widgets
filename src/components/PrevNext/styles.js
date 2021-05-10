@@ -24,11 +24,13 @@ export const Thumbnail = styled.div`
     width: 100%;
     box-sizing: border-box;
     padding: 0.5em;
-    color: white;
+    color: #f0f0f0;
     position: absolute;
     bottom: 0;
     margin: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0,0,0,0.8);
+    font-size: 1.6rem;
+    font-weight: 400;
   }
 `
 

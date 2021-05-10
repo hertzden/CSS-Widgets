@@ -45,6 +45,7 @@ export const query = graphql`
     frontmatter {
       title
       slug
+      ...cover
     }
   }
   query($slug: String!, $prevSlug: String!, $nextSlug: String!) {
