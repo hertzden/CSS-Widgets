@@ -68,14 +68,17 @@ html {
   h1, h2, h3, h4, h5, h6 {
     line-height: initial;
     letter-spacing: 1px;
+    color: var(--color-heading);
   }
+
   h1 {
     font-weight: 600;
-    color: var(--color-heading);
   }
-  h2, h3, h4, h5, h6 {
+  h2 {
     font-weight : 600;
-    color: var(--color-heading);
+  }
+  h3, h4, h5, h6 {
+    font-weight : 500;
   }
   p {
     margin: 0 0 2rem 0;
@@ -219,6 +222,7 @@ html {
     h3 {
       font-size: 2.2rem;
       line-height: 3rem;
+      font-weight: 500;
     }
     ul {
       list-style: none;

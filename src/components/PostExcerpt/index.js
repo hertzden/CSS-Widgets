@@ -14,7 +14,7 @@ export default function PostExcerpt({ post, noText }) {
           <Cover {...cover} {...cover.img} />
         </Link>
       </div>
-        <h3 css="font-size: 2.2rem; margin: 1rem auto;">
+        <h3>
           <Link to={slug}>{title}</Link>
         </h3>
         <PostMeta {...{ ...frontmatter, timeToRead }} />

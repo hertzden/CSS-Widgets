@@ -21,6 +21,10 @@ export const Post = styled.article`
       display: flex;
     }
   }
+  h3 {
+    font-size: 2.2rem;
+    margin: 1rem auto;
+  }
   > :not(:first-child) {
     margin-left: 20px;
     margin-right: 20px;

@@ -15,6 +15,7 @@ import { Grid1x2 } from 'styled-icons/bootstrap'
 import { Accessibility } from 'styled-icons/ionicons-outline'
 import { ColorLens, Web } from 'styled-icons/material'
 import { WeatherSunny } from 'styled-icons/typicons'
+import { WebAsset } from 'styled-icons/fluentui-system-regular/'
 import { mediaQueries } from 'utils/mediaQueries'
 export { Tags as TagsIcon } from 'styled-icons/bootstrap'
 
@@ -71,9 +72,9 @@ export const TagCloud = styled.div`
 `
 
 export const Tag = styled.button`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: inherit;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   margin: 0 10px 10px 0;
   display: flex;
   align-items: center;
@@ -123,6 +124,7 @@ export const Toggle = styled(ToggleOff).attrs(props => ({
 export const tagIcons = {
   All: Grid,
   'Web Dev': Web,
+  'Form Design': WebAsset,
   Tutorial: ChalkboardTeacher,
   Accessibility: Accessibility,
   'Data Science': Database,

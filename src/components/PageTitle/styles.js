@@ -20,6 +20,7 @@ export const PageTitleDiv = styled.hgroup`
     font-size: 3.6rem;
     line-height: 4.2rem;
     margin: 1rem 0;
+    font-family:'Titillium Web', sans-serif;
     ${mediaQueries.minTablet} {
       font-size: 5.4rem;
       line-height: 6rem;
