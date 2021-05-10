@@ -117,8 +117,25 @@ At this last step, tick mark is created using `border` and `transition` properti
   }
 ```
 
-### Codesandbox
+## Focus style
+
+Now custom checkboxes are build, let's add focus style. It is important as we hide native checkbox which by default has focus. Here similar to step 2, outline styling will be added.
+
+```CSS:title=Focus-outline
+  .checkbox:focus + label::before {
+    outline: 2px solid #f5bc0e;
+    outline-offset: 4px;
+  }
+```
+
+That's it, we have developed custom checkboxes and implemented key points mentioned earlier in post. Final code with output can be seen in codesandbox.
+
+## Codesandbox
 
 https://codesandbox.io/s/custom-accessible-checkbox-tpih1?codemirror=1
 
-> So, note to self always use semantic markup over flatten markup, though later one saves your time or say it will double your work, once you think of accessibility and decides to re-write it.
+## Conclusion
+
+While there are other ways to do it as well, such as use of image/svg etc... You can find many articles explaining it very well, at the end it's your choice which works better for you.
+
+> **Important:** Do not wrap `input` element inside `label` and avoid putting `label` before input element, as it will cause issue in screen readers such as NVDA and Jaws. Specially when error messages are implemented it will create problem using assistive technologies. So stick to `input` then `label` structure.
