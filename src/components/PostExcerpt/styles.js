@@ -41,6 +41,7 @@ export const Post = styled.article`
     margin: 0 0 1rem 0;
     font-size: 1.6rem;
     letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
   }
   .read-more {
     display: inline-flex;

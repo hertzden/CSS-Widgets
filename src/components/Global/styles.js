@@ -82,6 +82,7 @@ html {
   }
   p {
     margin: 0 0 2rem 0;
+    -webkit-font-smoothing: antialiased;
   }
 
   strong {
