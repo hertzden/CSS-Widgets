@@ -19,7 +19,7 @@ export default function PostExcerpt({ post, noText }) {
         </h3>
         <PostMeta {...{ ...frontmatter, timeToRead }} />
         {!noText && <p dangerouslySetInnerHTML={{ __html: excerpt }} />}
-        <Link to={slug}>Read more <ArrowheadRightOutline size="1.6rem" /> <span className="sr-only">about {title}</span> </Link>
+        <Link className="read-more" to={slug}>Read more <ArrowheadRightOutline size="1.6rem" /> <span className="sr-only">about {title}</span> </Link>
     </Post>
   )
 }

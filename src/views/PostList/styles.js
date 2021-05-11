@@ -54,6 +54,9 @@ export const PostGridAlt = styled.div`
     grid-template-columns: repeat( auto-fill,minmax(32rem,1fr));
     grid-gap: 2rem;
   }
+  ${mediaQueries.maxPhone} {
+    grid-gap: 4rem;
+  }
 `
 
 export const PostGrid = styled(Grid)`

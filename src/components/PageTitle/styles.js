@@ -15,6 +15,10 @@ export const PageTitleDiv = styled.hgroup`
   text-align: center;
   overflow: hidden;
   padding: 0 2rem;
+    ${mediaQueries.minTablet} {
+      padding: 4rem 2rem; {
+    }
+  }
   h1 {
     font-weight: 600;
     font-size: 3.6rem;

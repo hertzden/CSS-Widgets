@@ -1,9 +1,9 @@
 ---
-title: Custom Accessible Checkbox
-slug: /custom-accessible-checkbox
-date: 2019-11-10
+title: SASS 7-1 Architecture
+slug: /sass-7-1-architecture
+date: 2019-11-14
 cover:
-  img: checkbox.svg
+  img: sass.svg
 tags:
   - Form Design
   - Accessibility

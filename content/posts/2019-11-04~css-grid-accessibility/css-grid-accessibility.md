@@ -3,7 +3,7 @@ title: CSS Grid and Accessibility
 slug: /css-grid-accessibility
 date: 2019-11-04
 cover:
-  img: grid.jpg
+  img: grid.svg
 tags:
   - CSS Grid
   - Accessibility

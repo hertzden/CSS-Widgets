@@ -24,6 +24,10 @@ export const Post = styled.article`
   h3 {
     font-size: 2.2rem;
     margin: 1rem auto;
+    color: var(--color-heading);
+    a {
+      color: var(--color-postHeading);
+    }
   }
   > :not(:first-child) {
     margin-left: 20px;
@@ -36,7 +40,21 @@ export const Post = styled.article`
   p {
     margin: 0 0 1rem 0;
     font-size: 1.6rem;
-    letter-spacing: 0.1px;
+    letter-spacing: 0.5px;
+  }
+  .read-more {
+    display: inline-flex;
+    align-items: center;
+    justify-self: flex-end;
+    background: #077b88;
+    margin: 0;
+    max-width: fit-content;
+    padding: 2px 12px;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 15px 0 10px 0;
+    margin: 0 5px 5px 0;
+    font-size: 1.4rem;
   }
 `
 

@@ -14,7 +14,7 @@ import { Link } from 'gatsby'
 export const NavDiv = styled.nav`
   align-items: center;
   /* transition: 0.3s; */
-  color: var(--color-link);
+  color: var(--color-heading);
   button {
     position: absolute;
     top: 35px;
@@ -45,9 +45,10 @@ export const NavDiv = styled.nav`
     li a {
       font-size: 2.4rem;
       padding: 0.7rem 1rem;
+      position: relative;
       &:hover {
-        background-color: var(--color-hoverBackground);
-        border-radius: 10px;
+        /* background-color: var(--color-hoverBackground);
+        border-radius: 10px; */
       }
       ${mediaQueries.minTablet} {
         font-size: 1.8rem;
@@ -119,6 +120,17 @@ export const NavLink = styled(Link).attrs({
   transition: 0.3s;
   &.active {
     color: var(--color-a);
+    &:before {
+      position: absolute;
+      bottom: -3px;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #f8637766;
+    border-radius: 9999px;
+    transform: rotate( 2deg);
+    }
   }
   :hover {
     color: var(--color-a);
