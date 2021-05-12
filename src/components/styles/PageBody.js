@@ -14,7 +14,7 @@ export const PageBody = styled.div`
   grid-gap:0 6rem;
   grid-template-columns: 1fr;
   ${mediaQueries.minTablet} {
-    grid-template-columns: 1fr minmax(15rem, 30rem);
+    grid-template-columns: 1fr minmax(15rem, 32rem);
     padding: 0;
   }
   ${mediaQueries.maxLaptop} {
@@ -61,7 +61,7 @@ export const PageWrapper = styled.div`
   }
   @media only screen and (min-width: 48em) and (max-width: 64em) {
     grid-gap: 0 30px;
-    padding: 0 2rem;
+    padding: 0 6rem;
   }
 `
 

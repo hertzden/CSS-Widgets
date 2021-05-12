@@ -191,7 +191,7 @@ html {
     width: 100%;
     ${mediaQueries.minLaptop} {
       position: fixed;
-      width: 300px;
+      width: 320px;
     }
   }
   .single-article {
@@ -205,6 +205,9 @@ html {
     //letter-spacing: 1px;
     line-height: 3.6rem;
     color: var(--color-articleText);
+    ${mediaQueries.maxLaptop} {
+      max-width: 680px;
+    }
     h2, h3, h4, h5, h6 {
       color: var(--color-postHeading);
       margin: 1rem 0;

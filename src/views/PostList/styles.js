@@ -48,10 +48,11 @@ h2::before {
 
 export const PostGridAlt = styled.div`
   display: grid;
-  grid-template-columns: repeat( auto-fill,minmax(36rem,1fr));
+  grid-auto-flow: row;
+  /* grid-template-columns: repeat( auto-fill,minmax(36rem,1fr)); */
   grid-gap: 4rem;
   ${mediaQueries.maxLaptop} {
-    grid-template-columns: repeat( auto-fill,minmax(32rem,1fr));
+    /* grid-template-columns: repeat( auto-fill,minmax(32rem,1fr)); */
     grid-gap: 2rem;
   }
   ${mediaQueries.maxPhone} {

@@ -11,7 +11,7 @@ export const query = graphql`
       ...cover
     }
     timeToRead
-    excerpt(pruneLength: 200)
+    excerpt(pruneLength: 120)
     body
   }
 `

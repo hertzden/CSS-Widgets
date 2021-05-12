@@ -14,12 +14,14 @@ export default function PostExcerpt({ post, noText }) {
           <Cover {...cover} {...cover.img} />
         </Link>
       </div>
+      <div>
         <h3>
           <Link to={slug}>{title}</Link>
         </h3>
         <PostMeta {...{ ...frontmatter, timeToRead }} />
         {!noText && <p dangerouslySetInnerHTML={{ __html: excerpt }} />}
         <Link className="read-more" to={slug}>Read more <ArrowheadRightOutline size="1.6rem" /> <span className="sr-only">about {title}</span> </Link>
+        </div>
     </Post>
   )
 }

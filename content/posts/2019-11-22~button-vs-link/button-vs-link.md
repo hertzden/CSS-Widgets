@@ -1,12 +1,12 @@
 ---
-title: SASS 7-1 Architecture
-slug: /sass-7-1-architecture
-date: 2019-11-14
+title: Button vs Link
+slug: /button-vs-link.md
+date: 2019-11-22
 cover:
-  img: sass.svg
+  img: button.svg
 tags:
-  - SASS
-  - CSS Architecture
+  - Form Design
+  - Accessibility
 showToc: true
 ---
 
