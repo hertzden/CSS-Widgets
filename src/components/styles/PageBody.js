@@ -65,10 +65,15 @@ export const PageWrapper = styled.div`
   }
 `
 
+
 export const SinglePageWrapper = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 840px;
   margin: 0 auto;
+`
+
+export const SingleWrapper =styled.div`
+  padding: 0 2rem;
 `
 
 export const Mode = styled.div`

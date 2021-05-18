@@ -1,5 +1,5 @@
 import PageTitle from 'components/PageTitle'
-import { PageBody, Wrapper, SinglePageWrapper } from 'components/styles'
+import { PageBody, Wrapper, SinglePageWrapper, SingleWrapper } from 'components/styles'
 import { graphql } from 'gatsby'
 import React, { useState } from 'react'
 
@@ -12,6 +12,7 @@ export default function AboutPage() {
         <h1>About - CSS Widgets</h1>
       </PageTitle>
       <SinglePageWrapper>
+        <SingleWrapper>
         <p>Hello <span className="">👋</span> reader, welcome to CSS Widgets - A platform focused on basics of <strong>CSS, HTML, Accessibility and JavaScript.</strong> Here you will learn, and grow as a developer/designer irrespective of your experience.</p>
         <p>Here is what you will find on CSS Widgets:</p>
 
@@ -25,6 +26,7 @@ export default function AboutPage() {
         </ul>
         <h2>Meet the Author</h2>
         <p>Hey, I'm  <strong>Harshit Purwar.</strong> User Experience Engineer working on design systems, jamstack, accessibility, user/dev experience.</p>
+        </SingleWrapper>
       </SinglePageWrapper>
       </Wrapper>
     </>
