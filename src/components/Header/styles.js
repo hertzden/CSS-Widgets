@@ -15,8 +15,8 @@ export const Title = styled.div`
     background-position: center center;
     filter: brightness(var(--color-filter));
     ${mediaQueries.minTablet} {
-      width: 160px;
-      height: 80px;
+      width: 150px;
+      height: 70px;
       background-position: 5px;
     }
 `
@@ -32,7 +32,7 @@ export const HeaderDiv = styled.header`
 {/*border-bottom: 1px solid var(--color-a);*/}
   background: var(--color-headerBackground);
   ${mediaQueries.minTablet} {
-    height: 155px;
+    height: 140px;
     padding: 2rem 2rem 0;
   }
 `

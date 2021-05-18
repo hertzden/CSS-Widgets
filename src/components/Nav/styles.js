@@ -127,7 +127,7 @@ export const NavLink = styled(Link).attrs({
     content: "";
     width: 100%;
     height: 4px;
-    background: #f8637766;
+    background: #f86377;
     border-radius: 9999px;
     transform: rotate( 2deg);
     }

@@ -149,8 +149,8 @@ html {
     height: 60px;
     width: 60px;
     ${mediaQueries.minTablet} {
-      height: 80px;
-      width: 80px;
+      height: 70px;
+      width: 70px;
     }
   }
   .hero-bg {
@@ -245,6 +245,26 @@ html {
       width: 16px;
       height: 16px;
       padding-left: 24px;
+      //filter: brightness(var(--color-filter));
+    }
+  }
+  .about-list {
+    padding: 0;
+    margin-bottom: 60px;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    li:before {
+      content: '';
+      position: relative;
+      color: #0099cc;
+      background: url(${arrow}) no-repeat center;
+      background-size: 16px;
+      width: 16px;
+      height: 16px;
+      padding-left: 15px;
       //filter: brightness(var(--color-filter));
     }
   }
