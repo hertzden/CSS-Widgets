@@ -23,6 +23,9 @@ export const Meta = styled.div`
     margin-right: 1em;
   }
   ${props => props.inTitle && inTitle};
+  .comment {
+    color: var(--color-link);
+  }
 `
 
 export const TagList = ({ tags }) => (

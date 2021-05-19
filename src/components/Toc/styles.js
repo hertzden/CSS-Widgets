@@ -25,6 +25,13 @@ export const TocDiv = styled.aside`
   nav {
     max-height: 78vh;
     overflow-y: scroll;
+    display: flex;
+    flex-flow: column;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
   ${mediaQueries.maxLaptop} {
     position: fixed;
@@ -62,10 +69,14 @@ export const TocLink = styled.a`
   cursor: pointer;
   color: ${p => (p.active ? `var(--color-c)` : `var(--color-gray)`)};
   font-weight: ${props => props.active && `400`};
-  display: block;
+  display: inline-flex;
+  width: fit-content;
   margin-left: ${props => props.depth + `em`};
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  &:before {
+    bottom: 0;
+  }
 `
 
 export const TocIcon = styled(BookContent)`

@@ -64,7 +64,9 @@ export default function Toc({ headingSelector, getTitle, getDepth, ...rest }) {
           <ToggleButtonClose><TocToggle onClick={() => setOpen(false)} /></ToggleButtonClose>
         </Title>
         <nav>
+        <ul>
           {headings.titles.map(({ title, depth }, index) => (
+            <li>
             <TocLink
               key={title}
               active={active === index}
@@ -80,7 +82,9 @@ export default function Toc({ headingSelector, getTitle, getDepth, ...rest }) {
             >
               {title}
             </TocLink>
+            </li>
           ))}
+          </ul>
         </nav>
       </TocDiv>
     </>

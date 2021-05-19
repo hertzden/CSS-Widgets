@@ -37,8 +37,26 @@ html {
     a {
       text-decoration: none;
       color: var(--color-link);
+      position: relative;
+      :before {
+        content: "";
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: 3px;
+        right: 0;
+        border-radius: 5px;
+        background: var(--color-link);
+        transition: all .3s ease-in-out;
+      }
       :hover {
-        color: var(--color-a);
+        transition: all .3s ease-in-out;
+        color: var(--color-link);
+        // text-decoration: underline;
+      }
+      :hover:before {
+        width: 100%;
+        left: 0;
       }
     }
   }

@@ -20,7 +20,7 @@ const PostMeta = ({ title, slug, date, timeToRead, tags, inTitle = false }) => (
       &ensp;
       {timeToRead} min read
     </span>
-    <span>
+    <span className="comment">
       <Comment size="1.6rem" />
       &ensp;
       <Link to={slug + `#disqus_thread`}>

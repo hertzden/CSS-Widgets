@@ -87,7 +87,7 @@ export const Tag = styled.button`
   border: 2px solid var(--color-background);
   background: transparent;
   &:hover {
-    border-color: var(--color-tagsBorder);
+    border-color: ${p => (p.active ? `var(--color-activeTagLink)` : `var(--color-tagsBorder)`)};
   }
   ${mediaQueries.maxTablet} {
     border: 2px solid ${p => (p.active ? `var(--color-activeTagLink)` : `var(--color-link)`)};

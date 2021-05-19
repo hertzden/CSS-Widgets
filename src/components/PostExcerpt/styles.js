@@ -23,6 +23,10 @@ export const Post = styled.article`
     padding: 0.7rem;
     a {
       display: flex;
+      &:before {
+        transition: none;
+        background: transparent;
+      }
     }
   }
   h3 {
@@ -32,6 +36,9 @@ export const Post = styled.article`
     color: var(--color-heading);
     a {
       color: var(--color-postHeading);
+      &:before {
+        background: var(--color-postHeading);
+      }
     }
   }
   > :not(:first-child) {
@@ -63,6 +70,9 @@ export const Post = styled.article`
     font-weight: 400;
     border-radius: 15px 0 10px 0;
     font-size: 1.4rem;
+    &:before {
+      background: transparent;
+    }
   }
 `
 

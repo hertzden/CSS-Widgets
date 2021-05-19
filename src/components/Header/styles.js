@@ -58,6 +58,9 @@ color: inherit;
 place-self: flex-start;
 display: flex;
 flex-basis: 33.33%;
+&:before {
+  background: inherit;
+}
 `
 // export const Title = styled.div`
 //   font-size: 3rem;

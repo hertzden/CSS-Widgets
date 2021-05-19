@@ -118,21 +118,39 @@ export const NavLink = styled(Link).attrs({
   white-space: nowrap;
   color: inherit;
   transition: 0.3s;
+  &:before {
+    content: "";
+    width: 0;
+    height: 4px;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    background: #f86377;
+    border-radius: 9999px;
+    transform: rotate( 2deg);
+    transition: all .3s ease-in-out;
+  }
   &.active {
     color: var(--color-a);
     &:before {
       position: absolute;
       bottom: -3px;
-    left: 0;
-    content: "";
-    width: 100%;
-    height: 4px;
-    background: #f86377;
-    border-radius: 9999px;
-    transform: rotate( 2deg);
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 4px;
+      background: #f86377;
+      border-radius: 9999px;
+      transform: rotate( 2deg);
     }
   }
   :hover {
     color: var(--color-a);
+    transition: all .3s ease-in-out;
+  }
+  :hover:before {
+    width: 100%;
+    left: 0;
   }
 `

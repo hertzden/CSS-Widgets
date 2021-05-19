@@ -16,7 +16,7 @@ export const PageTitleDiv = styled.hgroup`
   overflow: hidden;
   padding: 0 2rem;
     ${mediaQueries.minTablet} {
-      padding: 4rem 2rem; {
+      padding: 2rem; {
     }
   }
   h1 {
