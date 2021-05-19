@@ -10,7 +10,9 @@ tags:
 showToc: true
 ---
 
-Now a days custom checkbox styles are part of every design, while it's an enhancement over native element it possess challenge if implementation goes wrong. Not only keyboard users, screen readers and even mouse users will face problem while filling up forms.
+When it comes to maintaining CSS at large scale project it quickly get messy when modular approach is not followed. As project grows it becomes quite important to keep files and folders organized.
+
+Well to make things easy for us, **<a href="https://sass-guidelin.es/#the-7-1-pattern">Kitty Giraudel's</a> '7-1 pattern'** guidelines comes to rescue. That comprehensive guide covers each and every aspect, but here i will share some very useful and hands-on tips.
 
 ## Key Consideration
 

@@ -52,6 +52,10 @@ export const Box = styled.div`
     &:not(:first-child) {
       margin-left: 10px;
     }
+    &:before {
+      transition: none;
+      background: transparent;
+    }
     &:hover {
       background: #f86377;
       svg {

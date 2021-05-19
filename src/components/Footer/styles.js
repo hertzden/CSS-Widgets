@@ -44,6 +44,10 @@ export const PoweredBy = styled.div`
   grid-area: poweredBy;
   > a {
     padding: 0 0.5em;
+    &:before {
+      transition: none;
+      background: transparent;
+    }
   }
 `
 

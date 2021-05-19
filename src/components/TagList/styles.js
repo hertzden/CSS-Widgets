@@ -16,8 +16,10 @@ import { Accessibility } from 'styled-icons/ionicons-outline'
 import { ColorLens, Web } from 'styled-icons/material'
 import { WeatherSunny } from 'styled-icons/typicons'
 import { WebAsset } from 'styled-icons/fluentui-system-regular/'
+import { Sass } from 'styled-icons/fa-brands/'
 import { mediaQueries } from 'utils/mediaQueries'
 export { Tags as TagsIcon } from 'styled-icons/bootstrap'
+
 
 
 
@@ -125,6 +127,7 @@ export const tagIcons = {
   All: Grid,
   'Web Dev': Web,
   'Form Design': WebAsset,
+  SASS: Sass,
   Tutorial: ChalkboardTeacher,
   Accessibility: Accessibility,
   'Data Science': Database,
