@@ -28,11 +28,12 @@ export default function IndexPage({ data }) {
         <h1>Blog</h1>
       </PageTitle>*/}
       <Wrapper id="skip-to-main-content">
-        <PageBody>
+        <PageBody className="">
           <ModeDevice>
             <TagList {...{ tags, activeTag, setActiveTag }} />
           </ModeDevice>
           <PostList inBlog posts={filteredPosts} />
+          
           <aside className="sidebar">
             <div className="sidebar-wrap">
               <Mode>

@@ -70,6 +70,9 @@ export const Post = styled.article`
     font-weight: 400;
     border-radius: 15px 0 10px 0;
     font-size: 1.4rem;
+    &:hover, &:focus {
+      background: #075b65;
+    }
     &:before {
       background: transparent;
     }

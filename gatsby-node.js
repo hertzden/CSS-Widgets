@@ -5,12 +5,20 @@ const childProcess = require(`child_process`)
 const svgToMiniDataURI = require(`mini-svg-data-uri`)
 const SVGO = require(`svgo`)
 
-
+const pageTemplate = path.resolve(`./src/templates/page.js`)
 const postTemplate = path.resolve(`./src/templates/post.js`)
 
 const query = `
   {
-
+    pages: allMdx(
+      filter: { fileAbsolutePath: { regex: "/pages/" } }
+    ) {
+      nodes {
+        frontmatter {
+          slug
+        }
+      }
+    }
     posts: allMdx(
       filter: { fileAbsolutePath: { regex: "/posts/" } }
       sort: { fields: frontmatter___date, order: DESC }
@@ -29,16 +37,16 @@ exports.createPages = async ({ graphql, actions }) => {
   if (response.errors) throw new Error(response.errors)
   const { pages, posts } = response.data
 
-  // pages.nodes.forEach(page => {
-  //   const { slug } = page.frontmatter
-  //   if (slug) {
-  //     actions.createPage({
-  //       path: slug,
-  //       component: pageTemplate,
-  //       context: { slug },
-  //     })
-  //   }
-  // })
+  pages.nodes.forEach(page => {
+    const { slug } = page.frontmatter
+    if (slug) {
+      actions.createPage({
+        path: slug,
+        component: pageTemplate,
+        context: { slug },
+      })
+    }
+  })
 
   posts.nodes.forEach((post, index, arr) => {
     const nextSlug = arr[index - 1]?.frontmatter.slug ?? ``

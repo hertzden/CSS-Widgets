@@ -12,7 +12,7 @@ export default function PageTemplate({ data }) {
   cover.alt = cover?.img?.alt
   return (
     <>
-      <PageTitle>
+      <PageTitle img={cover}>
         <h1>{title}</h1>
       </PageTitle>
       {excerpt && ( // If excerpt is empty, so is body. Hence no need to render it.
@@ -24,3 +24,11 @@ export default function PageTemplate({ data }) {
     </>
   )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    page: mdx(frontmatter: { slug: { eq: $slug } }) {
+      ...page
+    }
+  }
+`
