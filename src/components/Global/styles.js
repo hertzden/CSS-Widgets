@@ -140,6 +140,9 @@ html {
 .anchor.before {
   transform: translateX(-125%);
   padding: 0;
+  &:before {
+    background: transparent;
+  }
 }
   table {
     border-collapse: collapse;
