@@ -121,6 +121,10 @@ export const MODE_COLORS = {
     light: gray.default,
     dark: gray.darkest,
   },
+  button: {
+    light: `#077b88`,
+    dark: `#01a4b6`,
+  },
   articleText: {
     light: `#0a0c10`,
     dark: `#b5bdbd`,

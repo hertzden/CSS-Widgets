@@ -12,7 +12,7 @@ export const FooterDiv = styled.footer`
     color: var(--color-text);
   }
   ${mediaQueries.minTablet} {
-    padding: 3rem;
+    padding: 2rem;
   }
 `
 
@@ -44,7 +44,15 @@ export const PoweredBy = styled.div`
   grid-area: poweredBy;
   > a {
     padding: 0 0.5em;
+    &:hover {
+      color: #f86377
+      /* svg {
+        fill: #f86377;
+      } */
+    }
     &:before {
+      position: static;
+      content: initial;
       transition: none;
       background: transparent;
     }

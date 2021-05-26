@@ -4,6 +4,7 @@ export * from './Button'
 export * from './Caption'
 export * from './Grid'
 export * from './PageBody'
+export * from './Snippets'
 export * from './BorderBox'
 
 export const fadeInOnHoverParent = parent => css`

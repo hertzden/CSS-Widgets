@@ -1,6 +1,6 @@
 ---
-title: SASS 7-1 Architecture
-slug: /sass-7-1-architecture
+title: SASS Architecture
+slug: /sass-architecture
 date: 2019-11-14
 cover:
   img: sass.svg
@@ -12,7 +12,24 @@ showToc: true
 
 When it comes to maintaining CSS at large scale project it quickly get messy when modular approach is not followed. As project grows it becomes quite important to keep files and folders organized.
 
-Well to make things easy for us, **<a href="https://sass-guidelin.es/#the-7-1-pattern">Kitty Giraudel's</a> '7-1 pattern'** guidelines comes to rescue. That comprehensive guide covers each and every aspect, but here i will share some very useful and hands-on tips.
+Even with the help of preprocessor over vanilla CSS, we still need to have a file structure. Thus based on your project size choose a pattern and extend it based on requirements.
+
+## Small Projects
+
+Let's take example of small projects like microsite, campaign site etc... it is easier to divide files in three categories: `_base.scss`, `_components.scss` and `_layouts.scss` and one `main.scss` file where all these files are imported for compilation.
+
+> **Note:** Don't choose flat file structure, even if project is small, always choose modular approach which is easy to extend. So your file structure should be like this:
+
+* base/
+* components/
+* layouts/
+
+
+## Large Projects
+
+SASS files structure becomes bloated if modular approach is not followed, so need to organize it in right ways is important. So how will you make it readable and extendable, what pattern to follow these questions arises.
+
+Well to make things easy for us, **<a href="https://sass-guidelin.es/#the-7-1-pattern">Kitty Giraudel's</a> '7-1 pattern'** boilerplate comes to rescue. It is a widely adopted structure and it covers each and every aspect, but here i will share some very useful and hands-on tips.
 
 Though it is popularly known as 7-1, based on your project structure it could be 5-1/6-1 or even 8-1.
 
@@ -29,6 +46,8 @@ Though it is popularly known as 7-1, based on your project structure it could be
 ## 5-1/6-1 Pattern
 
 So this is how sass/scss files are organized, but based on your project requirement you may not need themes and vendors folders all the time. When both of these are not required it will be referred as 5-1, and if either of one is not required it will be referred as 6-1.
+
+> **Note:** There is no explicit rule that you have to create all 7 folders, based on project requirement and to keep things better organized for your team you can opt this pattern.
 
 ### Usage of Vendors
 

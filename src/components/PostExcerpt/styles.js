@@ -62,21 +62,23 @@ export const Post = styled.article`
     display: inline-flex;
     align-items: center;
     justify-self: flex-end;
-    background: #077b88;
+    /* background: #077b88; */
     margin: 0;
     max-width: fit-content;
-    padding: 2px 12px;
-    color: #fff;
+    padding: 0 12px;
+    color: var(--color-button);
     font-weight: 400;
+    border: 2px solid var(--color-button);
     border-radius: 15px 0 10px 0;
     font-size: 1.4rem;
     &:hover, &:focus {
-      background: #075b65;
+      background: rgb(7, 123, 136);
+      border-color: rgb(7, 123, 136);
+      color: #fff;
     }
     &:before {
       background: transparent;
     }
-  }
 `
 
 export const Cover = styled(Img).attrs(
@@ -90,7 +92,8 @@ export const Cover = styled(Img).attrs(
     border-radius: 6px 2px 2px 6px;
   }
   ${mediaQueries.minPhone} {
-    height: calc(12.5em + 4vh);
+    /* height: calc(12.5em + 4vh); */
+    height: 263px;
     border-radius: 6px 2px 2px 6px;
   }
 `

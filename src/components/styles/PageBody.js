@@ -65,7 +65,6 @@ export const PageWrapper = styled.div`
   }
 `
 
-
 export const SinglePageWrapper = styled.div`
   width: 100%;
   max-width: 840px;
@@ -74,6 +73,18 @@ export const SinglePageWrapper = styled.div`
 
 export const SingleWrapper =styled.div`
   padding: 0 2rem;
+`
+
+export const SinglePageBody = styled.div`
+  padding: 0 2rem;
+  max-width: 768px;
+  margin: 0 auto;
+  ${mediaQueries.minTablet} {
+    padding: 0;
+  }
+  ${mediaQueries.maxLaptop} {
+    padding: 0 2rem;
+  }
 `
 
 export const Mode = styled.div`
