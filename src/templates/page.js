@@ -3,6 +3,7 @@ import { PageBody,  Wrapper, SinglePageWrapper, SingleWrapper, SinglePageBody } 
 import { graphql } from 'gatsby'
 import { MDXRenderer as Mdx } from 'gatsby-plugin-mdx'
 import React from 'react'
+import SEO from 'components/Seo'
 
 export default function PageTemplate({ data }) {
   const { frontmatter, body, excerpt } = data.page
@@ -12,8 +13,10 @@ export default function PageTemplate({ data }) {
   cover.alt = cover?.img?.alt
   return (
     <>
+    <SEO title={frontmatter.title}/>
       <Wrapper>
-        <SinglePageBody>
+      <SinglePageWrapper>
+        <SingleWrapper>
         <PageTitle img={cover}>
           <h1>{title}</h1>
         </PageTitle>
@@ -22,7 +25,8 @@ export default function PageTemplate({ data }) {
           // Testing excerpt because body is an MDX function (always truthy).
             <Mdx>{body}</Mdx>
         )}
-        </SinglePageBody>
+        </SingleWrapper>
+      </SinglePageWrapper>
       </Wrapper>
     </>
   )

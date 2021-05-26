@@ -12,6 +12,7 @@ const langTagColor = [
   { lang: `gql`, tag: `graphql`, color: `#e10098` },
   { lang: `html`, tag: `html`, color: `#005a9c` },
   { lang: `css`, tag: `css`, color: `#ff9800` },
+  { lang: `scss`, tag: `scss`, color: `#ff9800` },
   { lang: `shell`, tag: `shell`, color: `white` },
   { lang: `sh`, tag: `sh`, color: `white` },
   { lang: `bash`, tag: `bash`, color: `white` },

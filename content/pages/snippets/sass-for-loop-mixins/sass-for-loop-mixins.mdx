@@ -1,0 +1,22 @@
+---
+title: SASS Mixins - for loop
+slug: /snippets/sass-mixins-for-loop
+cover:
+  img: string-theory-blackboard.jpg
+  source: National University of Singapore
+  url: http://news.nus.edu.sg/highlights/worlds-top-theorists-take-theory-everything
+  caption: String theory blackboard
+---
+
+
+### SASS code
+
+```SCSS:title=Icons-for-loop
+  $services-data-slug: home-services-data__icon !default;
+
+  @for $i from 1 through 6 {
+    .#{$services-data-slug}--#{$i} {
+      background: url('../images/services-icon-#{$i}.svg')
+    }
+  }
+```
