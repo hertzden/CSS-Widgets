@@ -29,10 +29,10 @@ export default function DarkToggle({ size = `1em`, ...rest }) {
         if (!item) return null
         const [title, Icon, nextMode] = modes[item]
         return (
-          <ModeToggleButton>
+          <ModeToggleButton onClick={() => setColorMode(nextMode)}>
             <Div key={key}>
               <Div style={style}>
-                <Icon size={size} title={title} onClick={() => setColorMode(nextMode)} />
+                <Icon size={size} title={title}  />
               </Div>
               <Div style={style}>
                 <Notification >{title}</Notification>

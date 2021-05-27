@@ -123,7 +123,7 @@ export const NavLink = styled(Link).attrs({
     width: 0;
     height: 4px;
     position: absolute;
-    bottom: -3px;
+    bottom: 0;
     left: 0;
     right: 0;
     background: #f86377;

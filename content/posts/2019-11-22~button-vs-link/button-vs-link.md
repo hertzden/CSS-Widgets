@@ -4,9 +4,12 @@ slug: /button-vs-link
 date: 2019-11-22
 cover:
   img: button.svg
+  source: Vecteezy
+  url: https://www.vecteezy.com/vector-art/223315-colorful-abstract-art-background-with-motivational-quote
 tags:
   - Form Design
   - Accessibility
+  - Usability
 showToc: true
 ---
 

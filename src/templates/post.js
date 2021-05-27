@@ -31,7 +31,8 @@ export default function PostTemplate({ data }) {
         <PageWrapper>
         {showToc && <Toc />}
 
-        <article className="single-article"><MDXRenderer>{body}</MDXRenderer></article>
+        <article className="single-article" >
+        <MDXRenderer>{body}</MDXRenderer></article>
         <DiscussionEmbed {...disqusConfig({ slug, title })} />
         <PrevNext prev={prev?.frontmatter} next={next?.frontmatter} label="post" />
         </PageWrapper>

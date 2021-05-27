@@ -4,6 +4,8 @@ slug: /custom-accessible-checkbox
 date: 2019-11-10
 cover:
   img: checkbox.svg
+  source: Vecteezy
+  url: https://www.vecteezy.com/vector-art/273658-abstract-background-vector
 tags:
   - Form Design
   - Accessibility

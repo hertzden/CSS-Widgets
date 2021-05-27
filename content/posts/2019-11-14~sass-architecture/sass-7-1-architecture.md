@@ -4,6 +4,8 @@ slug: /sass-architecture
 date: 2019-11-14
 cover:
   img: sass.svg
+  source: Vecteezy
+  url: https://www.vecteezy.com/vector-art/273771-flat-orange-abstract-vector-background
 tags:
   - SASS
   - CSS Architecture
