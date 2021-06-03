@@ -30,7 +30,7 @@ export default function Footer() {
           {poweredBy.map(({ url, title }) => {
             const Icon = Icons[title]
             return (
-              <a key={title} href={url} aria-label={title}>
+              <a key={title} href={url} aria-label={title} target="_blank" rel="noopener noreferrer nofollow">
                 <Icon size="1.6rem" />
               </a>
             )

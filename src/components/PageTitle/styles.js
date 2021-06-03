@@ -15,10 +15,12 @@ export const PageTitleDiv = styled.hgroup`
   text-align: center;
   overflow: hidden;
   padding: 0 2rem;
-    ${mediaQueries.minTablet} {
-      padding: 2rem; {
-    }
+  ${mediaQueries.minTablet} {
+    padding: 2rem;
+    width: 1024px;
+    margin: 0 auto;
   }
+
   h1 {
     font-weight: 600;
     font-size: 3.6rem;
@@ -45,9 +47,12 @@ export const PageTitleDiv = styled.hgroup`
 export const Img = styled(Image).attrs(
   p => !p.fluid && p.src && { as: `img`, src: p.dataURI || p.src }
 )`
-  position: absolute !important;
+position: absolute !important;
   z-index: -1;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  max-width: 180px;
+  border-radius: 10px;
+  max-height: 150px;
 `

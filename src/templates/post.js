@@ -23,7 +23,7 @@ export default function PostTemplate({ data }) {
     <>
       <SEO title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt} />
-      <PageTitle>
+      <PageTitle {...cover}>
         <h1>{title}</h1>
         <PostMeta inTitle {...{ ...frontmatter, timeToRead }} />
       </PageTitle>

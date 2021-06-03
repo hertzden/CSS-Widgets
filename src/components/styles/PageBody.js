@@ -20,6 +20,10 @@ export const PageBody = styled.div`
   ${mediaQueries.maxLaptop} {
     padding: 0 2rem;
     grid-gap:0 2rem;
+    /* grid-template-columns: 1fr minmax(15rem, 29rem); */
+  }
+  @media only screen and (min-width: 48em) and (max-width: 64em) and (orientation: landscape) {
+       grid-template-columns: 1fr minmax(15rem, 29rem);
   }
 
   {/*> * {
@@ -61,7 +65,7 @@ export const PageWrapper = styled.div`
   }
   @media only screen and (min-width: 48em) and (max-width: 64em) {
     grid-gap: 0 30px;
-    padding: 0 6rem;
+    padding: 0 2rem;
   }
 `
 
