@@ -7,7 +7,7 @@ const siteMetadata = {
   title: `CSS Widgets`,
   description: `Front-end Technologies | CSS, HTML, Accessibility.`,
   author: `Harshit Purwar`,
-  url: `css-widgets.com`,
+  url: `https://css-widgets.com`,
   social: {
       twitter: `harshitpurwar`,
   },
@@ -47,7 +47,7 @@ const plugins = [
     resolve: `gatsby-plugin-mdx`,
     options: {
       gatsbyRemarkPlugins,
-      plugins: [`gatsby-remark-images`, `gatsby-remark-autolink-headers`, `@weknow/gatsby-remark-codepen`, `gatsby-remark-embedder`],
+      plugins: [`gatsby-remark-images`, `gatsby-remark-autolink-headers`, `@weknow/gatsby-remark-codepen`, `gatsby-remark-embedder`, `gatsby-plugin-my-social-cards`],
       extensions: [`.mdx`, `.md`],
     },
   },

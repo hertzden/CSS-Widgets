@@ -1,6 +1,6 @@
 ---
 title: SASS Architecture
-slug: /sass-architecture
+slug: /sass-architecture/
 date: 2019-11-14
 cover:
   img: sass.svg

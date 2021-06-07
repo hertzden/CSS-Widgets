@@ -1,6 +1,6 @@
 ---
 title: Custom Accessible Checkbox
-slug: /custom-accessible-checkbox
+slug: /custom-accessible-checkbox/
 date: 2019-11-10
 cover:
   img: checkbox.svg

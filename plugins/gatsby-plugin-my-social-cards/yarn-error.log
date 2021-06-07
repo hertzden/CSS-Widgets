@@ -1,0 +1,31 @@
+Arguments: 
+  /usr/local/Cellar/node/15.14.0/bin/node /usr/local/Cellar/yarn/1.17.3/libexec/bin/yarn.js add --save jimp
+
+PATH: 
+  /Users/harshit.purwar/.rvm/gems/ruby-2.6.3/bin:/Users/harshit.purwar/.rvm/gems/ruby-2.6.3@global/bin:/Users/harshit.purwar/.rvm/rubies/ruby-2.6.3/bin:/Users/harshit.purwar/gems/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/harshit.purwar/Applications/instantclient_19_3:/Users/harshit.purwar/apache-maven-3.6.1/bin:/Users/harshit.purwar/Applications/instantclient_19_3:/Users/harshit.purwar/.rvm/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  14.16.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/harshit.purwar/CSS-Widgets/plugins/gatsby-plugin-my-social-cards/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.17.3/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

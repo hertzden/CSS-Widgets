@@ -1,6 +1,6 @@
 ---
 title: Button vs Link
-slug: /button-vs-link
+slug: /button-vs-link/
 date: 2019-11-22
 cover:
   img: button.svg
