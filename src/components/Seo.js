@@ -104,6 +104,7 @@ const SEO = ({ description, lang, meta, title, slug }) => {
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
+  slug: ``,
   description: ``,
 }
 
@@ -112,6 +113,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  slug: PropTypes.string,
 }
 
 export default SEO

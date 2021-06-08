@@ -79,6 +79,7 @@ const plugins = [
       ignore: [`**/posts/drafts`],
     },
   },
+  `gatsby-plugin-my-social-cards`,
   `gatsby-transformer-yaml`,
   `gatsby-plugin-catch-links`,
   `gatsby-plugin-styled-components`,
