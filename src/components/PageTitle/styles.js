@@ -53,7 +53,7 @@ position: absolute !important;
   height: 100%;
   object-fit: cover;
   max-width: 180px;
-  border-radius: 10px;
+  border-radius: 12px;
   max-height: 150px;
   display: none;
 `
