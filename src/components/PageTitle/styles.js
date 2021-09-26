@@ -55,4 +55,5 @@ position: absolute !important;
   max-width: 180px;
   border-radius: 10px;
   max-height: 150px;
+  display: none;
 `
