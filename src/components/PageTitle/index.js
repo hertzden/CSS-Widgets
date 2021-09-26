@@ -6,7 +6,7 @@ export default function PageTitle(props) {
   const { children, img, source, caption, url, ...rest } = props
   return (
     <PageTitleDiv {...rest}>
-      {<Img {...img} />}
+      {/*<Img {...img} />*/}
       {children}
       {(caption || source) && (
         <Caption showOnHoverParent={PageTitleDiv}>
