@@ -31,7 +31,7 @@ Let's take example of small projects like microsite, campaign site etc... it is 
 
 SASS files structure becomes bloated if modular approach is not followed, so need to organize it in right ways is important. So how will you make it readable and extendable, what pattern to follow these questions arises.
 
-Well to make things easy for us, **<a href="https://sass-guidelin.es/#the-7-1-pattern">Kitty Giraudel's</a> '7-1 pattern'** boilerplate comes to rescue. It is a widely adopted structure and it covers each and every aspect, but here i will share some very useful and hands-on tips.
+Well to make things easy for us, **<a href="https://sass-guidelin.es/#the-7-1-pattern" target="_blank" rel="noopener noreferrer nofollow">Kitty Giraudel's</a> '7-1 pattern'** boilerplate comes to rescue. It is a widely adopted structure and it covers each and every aspect, but here i will share some very useful and hands-on tips.
 
 Though it is popularly known as 7-1, based on your project structure it could be 5-1/6-1 or even 8-1.
 
