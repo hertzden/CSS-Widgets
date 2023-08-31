@@ -25,7 +25,7 @@ export default function AboutPage() {
         <li>A bit advance guide and snippets on styling in Gatsby.js and Next.js.</li>
         </ul>
         <h2>Meet the Author</h2>
-        <p>Hey, I'm  <a href="https://harshitpurwar.com" target="_blank"><strong>Harshit Purwar.</strong></a> User Experience Engineer working on design systems, jamstack, accessibility, user/dev experience.</p>
+        <p>Hey, I'm  <strong>Harshit Purwar.</strong> User Experience Engineer working on design systems, jamstack, accessibility, user/dev experience.</p>
         </SingleWrapper>
       </SinglePageWrapper>
       </Wrapper>
