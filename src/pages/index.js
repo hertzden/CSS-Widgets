@@ -1,5 +1,6 @@
 import PageTitle from 'components/PageTitle'
 import { PageBody, Wrapper, Mode, ModeDevice } from 'components/styles'
+import './style.css'
 import TagList from 'components/TagList'
 import { graphql } from 'gatsby'
 import { useQueryParam } from 'hooks'
@@ -28,7 +29,7 @@ export default function IndexPage({ data }) {
         <h1>Blog</h1>
       </PageTitle>*/}
       <Wrapper id="skip-to-main-content">
-        <PageBody className="">
+        <PageBody className="google-auto-placed">
           <ModeDevice>
             <TagList {...{ tags, activeTag, setActiveTag }} />
           </ModeDevice>

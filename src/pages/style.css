@@ -1,0 +1,13 @@
+.google-auto-placed {
+    position: relative;
+    display: grid;
+    grid-gap: 0 6rem;
+    grid-template-columns: 1fr;
+    
+}
+@media only screen and (min-width: 50em) {
+.google-auto-placed {
+        grid-template-columns: 1fr minmax(15rem,32rem);
+        padding: 0;
+    }
+}

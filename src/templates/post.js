@@ -28,7 +28,7 @@ export default function PostTemplate({ data }) {
         <PostMeta inTitle {...{ ...frontmatter, timeToRead }} />
       </PageTitle>
       <Wrapper>
-        <PageWrapper>
+        <PageWrapper className="google-auto-placed">
         {showToc && <Toc />}
 
         <article className="single-article" >
