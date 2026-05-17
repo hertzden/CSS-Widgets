@@ -1,12 +1,24 @@
+import Link from "next/link";
+import { getAllPosts } from "@/lib/posts";
+
 export default function Home() {
+  const posts = getAllPosts();
   return (
     <main>
-      <h1>CSS Widgets — migration in progress</h1>
-      <p>
-        This is the Next.js scaffold for{" "}
-        <a href="https://css-widgets.com">css-widgets.com</a>. Content and design
-        are being ported phase by phase.
-      </p>
+      <h1>CSS Widgets</h1>
+      <p>Front-end Technologies | CSS, HTML, Accessibility.</p>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link href={`/${post.slug}`}>{post.frontmatter.title}</Link>{" "}
+            <small>
+              <time dateTime={String(post.frontmatter.date)}>
+                {String(post.frontmatter.date)}
+              </time>
+            </small>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
