@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { mdxOptions } from "@/lib/mdx";
 import type { Metadata } from "next";
 
 type Params = { slug: string };
@@ -34,7 +35,7 @@ export default async function PostPage({
 
   const { content } = await compileMDX({
     source: post.content,
-    options: { parseFrontmatter: false },
+    options: mdxOptions,
   });
 
   return (
