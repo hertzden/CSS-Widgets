@@ -42,3 +42,6 @@ next-env.d.ts
 
 # draft posts (preserved from Gatsby era)
 content/posts/drafts
+
+# Generated post assets (built by lib/assets.ts on every npm run build)
+/public/posts/
