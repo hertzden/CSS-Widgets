@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "CSS Widgets",
   description: "Front-end Technologies | CSS, HTML, Accessibility.",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
