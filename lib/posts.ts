@@ -26,6 +26,32 @@ function normalizeSlug(rawSlug: string): string {
   return rawSlug.replace(/^\/+|\/+$/g, "");
 }
 
+function normalizeCodeFences(content: string): string {
+  return content.replace(
+    /^```\s*([A-Za-z0-9]+):title=([^\s`]+)\s*$/gm,
+    (_match, lang: string, title: string) =>
+      `\`\`\`${lang.toLowerCase()} title="${title}"`,
+  );
+}
+
+function rewriteRelativeImages(content: string, slug: string): string {
+  return content.replace(
+    /(!\[[^\]]*\]\()([^)]+)(\))/g,
+    (match, prefix: string, url: string, suffix: string) => {
+      if (
+        url.startsWith("/") ||
+        url.startsWith("http://") ||
+        url.startsWith("https://") ||
+        url.startsWith("data:") ||
+        url.startsWith("#")
+      ) {
+        return match;
+      }
+      return `${prefix}/posts/${slug}/${url}${suffix}`;
+    },
+  );
+}
+
 export function getAllPosts(): Post[] {
   const entries = fs.readdirSync(POSTS_DIR, { withFileTypes: true });
   const posts: Post[] = [];
@@ -49,11 +75,17 @@ export function getAllPosts(): Post[] {
       throw new Error(`Post is missing 'slug' frontmatter: ${filePath}`);
     }
 
+    const slug = normalizeSlug(fm.slug);
+    const transformed = rewriteRelativeImages(
+      normalizeCodeFences(content),
+      slug,
+    );
+
     posts.push({
-      slug: normalizeSlug(fm.slug),
+      slug,
       rawSlug: fm.slug,
       frontmatter: fm,
-      content,
+      content: transformed,
       filePath,
     });
   }
