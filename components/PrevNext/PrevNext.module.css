@@ -1,0 +1,32 @@
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 4rem 0 2rem;
+}
+
+.prev, .next {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem;
+  background: var(--color-boxBackground);
+  border: 1px solid var(--color-accentBackground);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background 0.2s;
+}
+.prev:hover, .next:hover {
+  background: var(--color-hoverBackground);
+  text-decoration: none;
+}
+.next { text-align: right; }
+
+.label {
+  font-size: 1.3rem;
+  color: var(--color-link);
+}
+.title {
+  font-weight: 600;
+}
