@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PostMeta } from "@/components/PostMeta/PostMeta";
 import styles from "./PostExcerpt.module.css";
 
@@ -24,19 +25,23 @@ export function PostExcerpt({
   return (
     <article className={styles.card}>
       {coverSrc && (
-        <Link href={`/${slug}`} className={styles.coverLink}>
-          <span
-            className={styles.cover}
-            role="img"
-            aria-label={`Cover image for ${title}`}
-            style={{ backgroundImage: `url("${coverSrc}")` }}
-          />
-        </Link>
+        <div className={styles.coverWrap}>
+          <Link href={`/${slug}`} className={styles.coverLink}>
+            <Image
+              src={coverSrc}
+              alt={`Cover image for ${title}`}
+              className={styles.cover}
+              width={520}
+              height={263}
+              unoptimized
+            />
+          </Link>
+        </div>
       )}
       <div className={styles.body}>
-        <h2 className={styles.heading}>
+        <h3 className={styles.heading}>
           <Link href={`/${slug}`}>{title}</Link>
-        </h2>
+        </h3>
         <PostMeta date={date} timeToRead={timeToRead} tags={tags} />
         {description && <p className={styles.description}>{description}</p>}
         <Link href={`/${slug}`} className={styles.readMore}>

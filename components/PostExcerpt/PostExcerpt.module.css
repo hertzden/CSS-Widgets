@@ -1,45 +1,93 @@
 .card {
   display: grid;
-  gap: 1.5rem;
-  padding: 1.5rem;
+  grid-auto-flow: row;
+  width: 100%;
+  border-radius: 10px;
   background: var(--color-boxBackground);
-  border: 1px solid var(--color-accentBackground);
-  border-radius: 0.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: rgb(1 1 1 / 5%) 1px 1px 5px 0px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-@media (min-width: 50em) {
-  .card { grid-template-columns: 200px 1fr; }
+.card:hover,
+.card:focus-within {
+  transform: translateY(-0.25rem);
+  box-shadow: rgb(0 0 0 / 12%) 0px 2px 4px, rgb(0 0 0 / 12%) 0px 5px 10px;
 }
 
-.coverLink { display: block; }
-.cover {
-  display: block;
-  width: 100%;
-  height: 140px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 0.4rem;
+@media (min-width: 30em) {
+  .card {
+    grid-auto-flow: column;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  }
 }
-@media (min-width: 50em) {
-  .cover { height: 100%; min-height: 140px; }
+
+.coverWrap {
+  padding: 0.7rem;
+  display: flex;
+}
+.coverLink {
+  display: flex;
+  width: 100%;
+}
+.coverLink:hover { text-decoration: none; }
+
+.cover {
+  width: 100%;
+  height: auto;
+  max-height: 263px;
+  object-fit: cover;
+  border-radius: 6px 6px 2px 2px;
+}
+@media (min-width: 30em) {
+  .cover {
+    height: 263px;
+    border-radius: 6px 2px 2px 6px;
+  }
+}
+
+.body {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .heading {
+  font-size: 2.2rem;
+  line-height: 3rem;
   margin: 0 0 0.5rem 0;
-  font-size: 2rem;
 }
-.heading a { color: var(--color-postHeading); text-decoration: none; }
+.heading a {
+  color: var(--color-postHeading);
+  text-decoration: none;
+}
 .heading a:hover { text-decoration: underline; }
 
 .description {
-  margin: 0.5rem 0 1rem 0;
+  margin: 0 0 1rem 0;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.5px;
 }
 
 .readMore {
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-end;
+  padding: 0.4rem 1.2rem;
+  margin-top: auto;
+  max-width: fit-content;
   color: var(--color-link);
+  font-weight: 500;
+  font-size: 1.4rem;
+  border: 2px solid var(--color-link);
+  border-radius: 15px 0 10px 0;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.readMore:hover,
+.readMore:focus {
+  background: var(--color-link);
+  color: #fff;
+  text-decoration: none;
 }
