@@ -1,0 +1,9 @@
+.list {
+  display: grid;
+  gap: 1.5rem;
+}
+.empty {
+  text-align: center;
+  opacity: 0.7;
+  margin: 2rem 0;
+}
