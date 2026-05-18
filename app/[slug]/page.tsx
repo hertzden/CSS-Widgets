@@ -1,8 +1,17 @@
 import { notFound } from "next/navigation";
 import { compileMDX } from "next-mdx-remote/rsc";
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import {
+  getAllPosts,
+  getPostBySlug,
+  getAdjacentPosts,
+} from "@/lib/posts";
 import { mdxOptions } from "@/lib/mdx";
+import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { PostMeta } from "@/components/PostMeta/PostMeta";
+import { PrevNext } from "@/components/PrevNext/PrevNext";
+import { Toc } from "@/components/Toc/Toc";
 import type { Metadata } from "next";
+import styles from "./post.module.css";
 
 type Params = { slug: string };
 
@@ -37,18 +46,35 @@ export default async function PostPage({
     source: post.content,
     options: mdxOptions,
   });
+  const { prev, next } = getAdjacentPosts(slug);
+
+  const cover = post.frontmatter.cover
+    ? {
+        src: `/posts/${slug}/${post.frontmatter.cover.img}`,
+        source: post.frontmatter.cover.source,
+        url: post.frontmatter.cover.url,
+      }
+    : undefined;
 
   return (
-    <article>
-      <header>
+    <>
+      <PageTitle cover={cover}>
         <h1>{post.frontmatter.title}</h1>
-        <p>
-          <time dateTime={String(post.frontmatter.date)}>
-            {String(post.frontmatter.date)}
-          </time>
-        </p>
-      </header>
-      {content}
-    </article>
+        <PostMeta
+          variant="hero"
+          date={post.frontmatter.date}
+          timeToRead={post.timeToRead}
+          tags={post.frontmatter.tags}
+        />
+      </PageTitle>
+      <div className={styles.layout}>
+        {post.frontmatter.showToc && <Toc />}
+        <article className={styles.article}>{content}</article>
+      </div>
+      <PrevNext
+        prev={prev && { slug: prev.slug, title: prev.frontmatter.title }}
+        next={next && { slug: next.slug, title: next.frontmatter.title }}
+      />
+    </>
   );
 }
