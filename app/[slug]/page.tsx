@@ -10,6 +10,7 @@ import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { PostMeta } from "@/components/PostMeta/PostMeta";
 import { PrevNext } from "@/components/PrevNext/PrevNext";
 import { Toc } from "@/components/Toc/Toc";
+import { DisqusThread } from "@/components/DisqusThread/DisqusThread";
 import type { Metadata } from "next";
 import styles from "./post.module.css";
 
@@ -71,6 +72,7 @@ export default async function PostPage({
         {post.frontmatter.showToc && <Toc />}
         <article className={styles.article}>{content}</article>
       </div>
+      <DisqusThread slug={post.slug} title={post.frontmatter.title} />
       <PrevNext
         prev={prev && { slug: prev.slug, title: prev.frontmatter.title }}
         next={next && { slug: next.slug, title: next.frontmatter.title }}
