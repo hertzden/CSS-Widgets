@@ -3,6 +3,7 @@ import { Baloo_2 } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Header } from "@/components/Header/Header";
 import { Footer } from "@/components/Footer/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { siteMetadata } from "@/lib/site";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <main id="main">{children}</main>
           <Footer />
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-LHTW9V1F9R" />
       </body>
     </html>
   );
