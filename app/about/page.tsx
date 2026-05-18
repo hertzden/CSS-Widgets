@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description: "About CSS Widgets — a platform focused on CSS, HTML, Accessibility, and JavaScript.",
+  openGraph: {
+    title: "About CSS Widgets",
+    description: "About CSS Widgets — a platform focused on CSS, HTML, Accessibility, and JavaScript.",
+  },
 };
 
 export default function AboutPage() {

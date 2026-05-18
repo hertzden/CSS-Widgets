@@ -28,9 +28,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) return {};
+  const description = post.frontmatter.description ?? post.excerpt;
   return {
     title: post.frontmatter.title,
-    description: post.frontmatter.description,
+    description,
+    openGraph: {
+      type: "article",
+      title: post.frontmatter.title,
+      description,
+      publishedTime: post.frontmatter.date,
+      tags: post.frontmatter.tags ? [...post.frontmatter.tags] : undefined,
+    },
+    twitter: {
+      title: post.frontmatter.title,
+      description,
+    },
   };
 }
 

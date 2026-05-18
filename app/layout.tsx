@@ -14,9 +14,24 @@ const baloo = Baloo_2({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteMetadata.url),
   title: { default: siteMetadata.title, template: `%s · ${siteMetadata.title}` },
   description: siteMetadata.description,
   icons: { icon: "/favicon.svg" },
+  openGraph: {
+    type: "website",
+    siteName: siteMetadata.title,
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+    url: siteMetadata.url,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: `@${siteMetadata.social.twitter}`,
+    title: siteMetadata.title,
+    description: siteMetadata.description,
+  },
 };
 
 export default function RootLayout({

@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Guides",
   description: "Guides on CSS, HTML, Accessibility, and modern front-end practices.",
+  openGraph: {
+    title: "Guides",
+    description: "Guides on CSS, HTML, Accessibility, and modern front-end practices.",
+  },
 };
 
 export default function GuidesPage() {
