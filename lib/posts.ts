@@ -22,6 +22,7 @@ export type Post = {
   content: string;
   filePath: string;
   timeToRead: number;
+  excerpt: string;
 };
 
 export type TagCount = { title: string; count: number };
@@ -70,6 +71,20 @@ function countWords(input: string): number {
   return input.trim().split(/\s+/).filter(Boolean).length;
 }
 
+function deriveExcerpt(fm: PostFrontmatter, body: string, max = 200): string {
+  if (fm.description) return fm.description;
+  const stripped = body
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/^#+\s.*$/gm, "")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .replace(/<[^>]+>/g, "")
+    .replace(/[*_`>#~]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return stripped.length > max ? stripped.slice(0, max).trimEnd() + "…" : stripped;
+}
+
 export function getAllPosts(): Post[] {
   const entries = fs.readdirSync(POSTS_DIR, { withFileTypes: true });
   const posts: Post[] = [];
@@ -103,6 +118,7 @@ export function getAllPosts(): Post[] {
       date: normalizeDate(fm.date),
     };
     const timeToRead = Math.max(1, Math.ceil(countWords(content) / WORDS_PER_MINUTE));
+    const excerpt = deriveExcerpt(normalizedFm, content);
 
     posts.push({
       slug,
@@ -111,6 +127,7 @@ export function getAllPosts(): Post[] {
       content: transformed,
       filePath,
       timeToRead,
+      excerpt,
     });
   }
 
