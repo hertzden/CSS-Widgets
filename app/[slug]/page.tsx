@@ -40,6 +40,7 @@ export async function generateMetadata({
       tags: post.frontmatter.tags ? [...post.frontmatter.tags] : undefined,
     },
     twitter: {
+      card: "summary_large_image",
       title: post.frontmatter.title,
       description,
     },
