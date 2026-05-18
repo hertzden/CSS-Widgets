@@ -1,16 +1,127 @@
-:root {
-  color-scheme: light dark;
-  font-family: system-ui, sans-serif;
-  line-height: 1.5;
+/* ===== Theme tokens =====
+   Light is the default. Dark applies when [data-theme="dark"] is on <html>.
+   Names mirror the legacy MODE_COLORS dictionary so a future polish pass
+   can search-and-replace where necessary. */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --color-text: #0a0c10;
+  --color-heading: #2d3748;
+  --color-articleText: #0a0c10;
+  --color-postHeading: #2c0b8e;
+  --color-link: #1f59cd;
+  --color-outline: #2c0b8e;
+  --color-background: #f8f8f8;
+  --color-headerBackground: #ffffff;
+  --color-boxBackground: #ffffff;
+  --color-blockquoteBG: #e2edf7;
+  --color-accentBackground: rgba(0, 0, 0, 0.05);
+  --color-hoverBackground: rgb(243 187 187 / 15%);
+  --color-textHighlight: #f0f0f0;
+  --color-filter: 0;
 }
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-text: #c7c7c7;
+  --color-heading: #e5e5e5;
+  --color-articleText: #b5bdbd;
+  --color-postHeading: #ecc54f;
+  --color-link: #279AF1;
+  --color-outline: #ecc54f;
+  --color-background: #0c1213;
+  --color-headerBackground: #0e141b;
+  --color-boxBackground: #131a23;
+  --color-blockquoteBG: #17252f;
+  --color-accentBackground: rgba(0, 0, 0, 0.7);
+  --color-hoverBackground: rgb(35 51 68 / 70%);
+  --color-textHighlight: #0d1314;
+  --color-filter: 1;
+}
+
+/* ===== Reset / base ===== */
+html { font-size: 62.5%; }
 
 body {
   margin: 0;
-  padding: 2rem;
-  max-width: 40rem;
-  margin-inline: auto;
+  font-family: var(--font-baloo-2), Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  background: var(--color-background);
+  color: var(--color-text);
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
-  color: inherit;
+  color: var(--color-link);
+  text-decoration: none;
 }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading);
+  letter-spacing: 1px;
+  line-height: initial;
+}
+h1, h2 { font-weight: 600; }
+h3, h4, h5, h6 { font-weight: 500; }
+
+p { margin: 0 0 2rem 0; -webkit-font-smoothing: antialiased; }
+strong { font-weight: 600; }
+
+::selection {
+  color: var(--color-textHighlight);
+  background: var(--color-outline);
+}
+
+blockquote, details {
+  border-left: 0.25em solid var(--color-link);
+  background: var(--color-blockquoteBG);
+  padding: 0.1em 0.3em 0.1em 1em;
+  margin: 3rem 0 4rem 0;
+}
+
+/* Skip link */
+.skip-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+.skip-main:focus,
+.skip-main:active {
+  color: #d33a2c;
+  background: #fff;
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  padding: .5em 1em;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 999;
+}
+
+/* Layout helpers */
+.wrapper { max-width: 1140px; margin: 0 auto; }
+.inner-wrapper { padding: 0 2rem; }
+
+main { flex: 1; max-width: 1140px; margin: 0 auto; padding: 2rem; }
+
+iframe { margin: 3rem 0; border: 2px solid var(--color-text); }
+
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    transition: outline-offset .25s ease;
+    outline-offset: 2px;
+    outline: 2px dashed var(--color-outline);
+  }
+}
+:focus:not(:focus-visible) { outline: 0; }
