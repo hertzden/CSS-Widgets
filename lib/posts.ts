@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
+const WORDS_PER_MINUTE = 200;
 
 export type PostFrontmatter = {
   title: string;
@@ -20,7 +21,10 @@ export type Post = {
   frontmatter: PostFrontmatter;
   content: string;
   filePath: string;
+  timeToRead: number;
 };
+
+export type TagCount = { title: string; count: number };
 
 function normalizeSlug(rawSlug: string): string {
   return rawSlug.replace(/^\/+|\/+$/g, "");
@@ -52,6 +56,20 @@ function rewriteRelativeImages(content: string, slug: string): string {
   );
 }
 
+function normalizeDate(value: unknown): string {
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10);
+  }
+  if (typeof value === "string") {
+    return value.slice(0, 10);
+  }
+  return "";
+}
+
+function countWords(input: string): number {
+  return input.trim().split(/\s+/).filter(Boolean).length;
+}
+
 export function getAllPosts(): Post[] {
   const entries = fs.readdirSync(POSTS_DIR, { withFileTypes: true });
   const posts: Post[] = [];
@@ -80,13 +98,19 @@ export function getAllPosts(): Post[] {
       normalizeCodeFences(content),
       slug,
     );
+    const normalizedFm: PostFrontmatter = {
+      ...fm,
+      date: normalizeDate(fm.date),
+    };
+    const timeToRead = Math.max(1, Math.ceil(countWords(content) / WORDS_PER_MINUTE));
 
     posts.push({
       slug,
       rawSlug: fm.slug,
-      frontmatter: fm,
+      frontmatter: normalizedFm,
       content: transformed,
       filePath,
+      timeToRead,
     });
   }
 
@@ -96,4 +120,30 @@ export function getAllPosts(): Post[] {
 
 export function getPostBySlug(slug: string): Post | undefined {
   return getAllPosts().find((p) => p.slug === slug);
+}
+
+export function getAdjacentPosts(slug: string): {
+  prev: Post | undefined;
+  next: Post | undefined;
+} {
+  const posts = getAllPosts();
+  const idx = posts.findIndex((p) => p.slug === slug);
+  if (idx === -1) return { prev: undefined, next: undefined };
+  // Posts are sorted newest-first, so prev (newer) is at idx-1; next (older) is at idx+1.
+  return {
+    prev: posts[idx - 1],
+    next: posts[idx + 1],
+  };
+}
+
+export function getAllTags(): TagCount[] {
+  const counts = new Map<string, number>();
+  for (const post of getAllPosts()) {
+    for (const tag of post.frontmatter.tags ?? []) {
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
+  }
+  return Array.from(counts, ([title, count]) => ({ title, count })).sort(
+    (a, b) => b.count - a.count || a.title.localeCompare(b.title),
+  );
 }
