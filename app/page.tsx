@@ -4,9 +4,8 @@ import { getAllPosts } from "@/lib/posts";
 export default function Home() {
   const posts = getAllPosts();
   return (
-    <main>
-      <h1>CSS Widgets</h1>
-      <p>Front-end Technologies | CSS, HTML, Accessibility.</p>
+    <>
+      <h1>Posts</h1>
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
@@ -19,6 +18,6 @@ export default function Home() {
           </li>
         ))}
       </ul>
-    </main>
+    </>
   );
 }
