@@ -17,13 +17,12 @@
 @media (min-width: 30em) {
   .card {
     grid-auto-flow: column;
-    grid-template-columns: 175px minmax(0, 1fr);
-    max-height: 195px;
+    grid-template-columns: 200px minmax(0, 1fr);
   }
 }
 
 .coverWrap {
-  padding: 0.6rem;
+  padding: 0.7rem;
   display: flex;
   align-items: stretch;
 }
@@ -31,23 +30,22 @@
   display: flex;
   width: 100%;
   height: 100%;
-  background: var(--color-accentBackground);
-  border-radius: 6px;
-  overflow: hidden;
 }
 .coverLink:hover { text-decoration: none; }
 
 .cover {
   width: 100%;
   height: auto;
-  max-height: 180px;
-  object-fit: contain;
+  max-height: 200px;
+  object-fit: cover;
   border-radius: 6px;
 }
 @media (min-width: 30em) {
   .cover {
     height: 100%;
-    max-height: 183px;
+    min-height: 180px;
+    max-height: 220px;
+    object-fit: cover;
   }
 }
 
