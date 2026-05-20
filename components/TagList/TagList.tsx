@@ -8,12 +8,14 @@ export function TagList({
   tags,
   activeTag,
   onSelect,
+  totalPosts,
 }: {
   tags: readonly Tag[];
   activeTag?: string;
   onSelect: (tag: string | undefined) => void;
+  totalPosts: number;
 }) {
-  const all = { title: "All", count: tags.reduce((s, t) => s + t.count, 0) };
+  const all = { title: "All", count: totalPosts };
   const allTags = [all, ...tags];
   return (
     <div className={styles.list} role="group" aria-label="Filter posts by tag">

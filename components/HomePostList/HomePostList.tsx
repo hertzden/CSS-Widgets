@@ -33,7 +33,12 @@ export function HomePostList({
       <section className={styles.content}>
         <h2 className={styles.sectionHeading}>Recently Published</h2>
         <div className={styles.mobileFilter}>
-          <TagList tags={tags} activeTag={activeTag} onSelect={setActiveTag} />
+          <TagList
+            tags={tags}
+            activeTag={activeTag}
+            onSelect={setActiveTag}
+            totalPosts={posts.length}
+          />
         </div>
         <div className={styles.list}>
           {filtered.map((post) => (
@@ -49,7 +54,12 @@ export function HomePostList({
       <aside className={styles.sidebar}>
         <div className={styles.desktopFilter}>
           <h2 className={styles.sectionHeading}>Tags</h2>
-          <TagList tags={tags} activeTag={activeTag} onSelect={setActiveTag} />
+          <TagList
+            tags={tags}
+            activeTag={activeTag}
+            onSelect={setActiveTag}
+            totalPosts={posts.length}
+          />
         </div>
         <Connect />
       </aside>
