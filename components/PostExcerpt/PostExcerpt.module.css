@@ -17,8 +17,8 @@
 @media (min-width: 30em) {
   .card {
     grid-auto-flow: column;
-    grid-template-columns: 200px minmax(0, 1fr);
-    max-height: 220px;
+    grid-template-columns: 175px minmax(0, 1fr);
+    max-height: 195px;
   }
 }
 
@@ -31,6 +31,9 @@
   display: flex;
   width: 100%;
   height: 100%;
+  background: var(--color-accentBackground);
+  border-radius: 6px;
+  overflow: hidden;
 }
 .coverLink:hover { text-decoration: none; }
 
@@ -38,14 +41,13 @@
   width: 100%;
   height: auto;
   max-height: 180px;
-  object-fit: cover;
-  border-radius: 6px 6px 2px 2px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 @media (min-width: 30em) {
   .cover {
     height: 100%;
-    max-height: 208px;
-    border-radius: 6px;
+    max-height: 183px;
   }
 }
 

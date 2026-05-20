@@ -3,7 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 
 const POSTS_DIR = path.join(process.cwd(), "content", "posts");
-const WORDS_PER_MINUTE = 200;
+const WORDS_PER_MINUTE = 265;
 
 export type PostFrontmatter = {
   title: string;
