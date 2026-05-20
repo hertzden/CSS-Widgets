@@ -15,10 +15,5 @@ export default function Home() {
       ? `/posts/${p.slug}/${p.frontmatter.cover.img}`
       : undefined,
   }));
-  return (
-    <>
-      <h1>Posts</h1>
-      <HomePostList posts={listPosts} tags={tags} />
-    </>
-  );
+  return <HomePostList posts={listPosts} tags={tags} />;
 }

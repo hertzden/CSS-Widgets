@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { PostExcerpt } from "@/components/PostExcerpt/PostExcerpt";
 import { TagList } from "@/components/TagList/TagList";
+import { Connect } from "@/components/Connect/Connect";
 import styles from "./HomePostList.module.css";
 
 type ListPost = {
@@ -28,16 +29,30 @@ export function HomePostList({
     : posts;
 
   return (
-    <>
-      <TagList tags={tags} activeTag={activeTag} onSelect={setActiveTag} />
-      <div className={styles.list}>
-        {filtered.map((post) => (
-          <PostExcerpt key={post.slug} {...post} />
-        ))}
-      </div>
-      {filtered.length === 0 && (
-        <p className={styles.empty}>No posts tagged "{activeTag}".</p>
-      )}
-    </>
+    <div className={styles.layout}>
+      <section className={styles.content}>
+        <h2 className={styles.sectionHeading}>Recently Published</h2>
+        <div className={styles.mobileFilter}>
+          <TagList tags={tags} activeTag={activeTag} onSelect={setActiveTag} />
+        </div>
+        <div className={styles.list}>
+          {filtered.map((post) => (
+            <PostExcerpt key={post.slug} {...post} />
+          ))}
+        </div>
+        {filtered.length === 0 && (
+          <p className={styles.empty}>
+            No posts tagged &quot;{activeTag}&quot;.
+          </p>
+        )}
+      </section>
+      <aside className={styles.sidebar}>
+        <div className={styles.desktopFilter}>
+          <h2 className={styles.sectionHeading}>Tags</h2>
+          <TagList tags={tags} activeTag={activeTag} onSelect={setActiveTag} />
+        </div>
+        <Connect />
+      </aside>
+    </div>
   );
 }
