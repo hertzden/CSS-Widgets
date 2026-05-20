@@ -12,7 +12,7 @@ type ListPost = {
   date: string;
   timeToRead: number;
   tags?: readonly string[];
-  description?: string;
+  excerpt: string;
   coverSrc?: string;
 };
 

@@ -9,7 +9,7 @@ type Props = {
   date: string;
   timeToRead: number;
   tags?: readonly string[];
-  description?: string;
+  excerpt: string;
   coverSrc?: string;
 };
 
@@ -19,7 +19,7 @@ export function PostExcerpt({
   date,
   timeToRead,
   tags,
-  description,
+  excerpt,
   coverSrc,
 }: Props) {
   return (
@@ -31,8 +31,8 @@ export function PostExcerpt({
               src={coverSrc}
               alt={`Cover image for ${title}`}
               className={styles.cover}
-              width={520}
-              height={263}
+              width={300}
+              height={200}
               unoptimized
             />
           </Link>
@@ -43,7 +43,7 @@ export function PostExcerpt({
           <Link href={`/${slug}`}>{title}</Link>
         </h3>
         <PostMeta date={date} timeToRead={timeToRead} tags={tags} />
-        {description && <p className={styles.description}>{description}</p>}
+        <p className={styles.excerpt}>{excerpt}</p>
         <Link href={`/${slug}`} className={styles.readMore}>
           Read more →
         </Link>

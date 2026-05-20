@@ -17,7 +17,7 @@
 @media (min-width: 30em) {
   .card {
     grid-auto-flow: column;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    grid-template-columns: 180px minmax(0, 1fr);
   }
 }
 
@@ -34,27 +34,29 @@
 .cover {
   width: 100%;
   height: auto;
-  max-height: 263px;
+  max-height: 200px;
   object-fit: cover;
   border-radius: 6px 6px 2px 2px;
 }
 @media (min-width: 30em) {
   .cover {
-    height: 263px;
+    height: 100%;
+    min-height: 165px;
+    max-height: none;
     border-radius: 6px 2px 2px 6px;
   }
 }
 
 .body {
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 1.5rem 1.2rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.3rem;
 }
 
 .heading {
-  font-size: 2.2rem;
-  line-height: 3rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
   margin: 0 0 0.5rem 0;
 }
 .heading a {
@@ -63,23 +65,27 @@
 }
 .heading a:hover { text-decoration: underline; }
 
-.description {
+.excerpt {
   margin: 0 0 1rem 0;
-  font-size: 1.6rem;
-  line-height: 2.6rem;
-  letter-spacing: 0.5px;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.3px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .readMore {
   display: inline-flex;
   align-items: center;
   align-self: flex-end;
-  padding: 0.4rem 1.2rem;
+  padding: 0.3rem 1rem;
   margin-top: auto;
   max-width: fit-content;
   color: var(--color-link);
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   border: 2px solid var(--color-link);
   border-radius: 15px 0 10px 0;
   text-decoration: none;

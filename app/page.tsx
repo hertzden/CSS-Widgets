@@ -10,7 +10,7 @@ export default function Home() {
     date: p.frontmatter.date,
     timeToRead: p.timeToRead,
     tags: p.frontmatter.tags,
-    description: p.frontmatter.description,
+    excerpt: p.frontmatter.description ?? p.excerpt,
     coverSrc: p.frontmatter.cover
       ? `/posts/${p.slug}/${p.frontmatter.cover.img}`
       : undefined,
