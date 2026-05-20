@@ -1,7 +1,7 @@
 # Gatsby → Next.js Migration — Design
 
 **Date:** 2026-05-17
-**Status:** Approved for planning
+**Status:** Implemented through Phase 7; ready to merge to master 2026-05-20
 **Scope:** Replace the existing Gatsby 3 site at css-widgets.com with a Next.js (App Router) implementation, preserving content, URLs, and visual design.
 
 ---
