@@ -1,0 +1,80 @@
+.opener {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.openerBar {
+  display: block;
+  height: 3px;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+.closer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  display: block;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(80vw, 320px);
+  background: var(--color-headerBackground);
+  padding: 4rem 2rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 4;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+.drawerOpen { transform: translateX(0); }
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.link {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.link:hover { color: var(--color-link); }
+
+@media (min-width: 50em) {
+  .opener { display: none; }
+  .closer { display: none; }
+  .drawer {
+    position: static;
+    width: auto;
+    background: transparent;
+    padding: 0;
+    transform: none;
+    box-shadow: none;
+  }
+  .list {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}

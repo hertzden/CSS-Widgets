@@ -1,0 +1,20 @@
+.toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem;
+  line-height: 1;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle:hover { color: var(--color-link); }
+.icon {
+  display: inline-flex;
+  width: 1.6em;
+  height: 1.6em;
+  align-items: center;
+  justify-content: center;
+}

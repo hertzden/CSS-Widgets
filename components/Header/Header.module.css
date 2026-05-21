@@ -1,0 +1,74 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--color-headerBackground);
+  padding: 2rem 2rem 0;
+  height: 105px;
+}
+
+@media (min-width: 50em) {
+  .header { height: 140px; }
+}
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-gap: 0 25px;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoMark {
+  height: 60px;
+  width: 60px;
+}
+@media (min-width: 50em) {
+  .logoMark { height: 70px; width: 70px; }
+}
+
+.logoText {
+  display: inline-block;
+  width: 150px;
+  height: 62px;
+  background-image: url("/images/logo-text.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(var(--color-filter));
+}
+@media (min-width: 50em) {
+  .logoText { height: 70px; background-position: 5px; }
+}
+
+.toggleMobile { display: block; }
+.toggleDesktop { display: none; }
+@media (min-width: 50em) {
+  .toggleMobile { display: none; }
+  .toggleDesktop { display: block; }
+}
+
+.hero {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  pointer-events: none;
+}
+
+.heroSvg {
+  fill: var(--color-background);
+  display: block;
+  height: 30px;
+}
+@media (min-width: 50em) {
+  .heroSvg { height: 60px; }
+}
